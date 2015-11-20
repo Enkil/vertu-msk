@@ -2230,7 +2230,9 @@ repare()
   background-size cover
   background-position: center center
   background-repeat: no-repeat
-  background-color: #ffffff
+  background-color: #f2f2f2
+  & + .model-catalog
+    background-color: #f2f2f2
 
 .model
   margin: 0 auto
@@ -2620,6 +2622,8 @@ repare()
       margin-left: 0
     & .new-catalog__slider__item__content--txt a
       text-align: left
+    & .new-catalog__slider__item__content--txt .icons__item
+      margin-bottom: 5px
     & .price-current
       color: #000000
       transition color 0.5s linear
