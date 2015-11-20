@@ -1,0 +1,143 @@
+extends template.jade
+
+// Mixin for phones
+mixin newCatalogSlider2(icon1, icon2, icon3, icon4, lnk, euroOld, euro, rubOld, rub, img)
+    .new-catalog__slider__item.model-line-items
+        .new-catalog__slider__item__content
+            .new-catalog__slider__item__content--txt
+                .icons
+                    if icon1 !== ''
+                        div(class=icon1)
+                    if icon2 !== ''
+                        div(class=icon2)
+                    if icon3 !== ''
+                        div(class=icon3)
+                    if icon4 !== ''
+                        div(class=icon4)
+                a(href="")=lnk
+            .new-catalog__slider__item__content--price
+                .new-catalog__slider__item__content--price--bd
+                    if euroOld !== ''
+                        span.price-old=euroOld
+                    span.price-current=euro
+                    if rubOld !== ''
+                        span.price-old=rubOld
+                    span.price-current=rub
+                a(href="", class="new-catalog__slider__item__content--cart")
+            img(src=img, alt="")
+
+block content
+    // Model block in models line
+    .model-wrp
+        article.model
+            a(href='javascript:void(0)' title='Предыдущая модель').model__arrow.model__arrow--prev
+            .model__inner-wrapper
+                h1.model__name-xs VERTU Signature Touch VERTU FOR BENTLEY
+                img(src='img/model__img.png' alt='VERTU Signature Touch VERTU FOR BENTLEY').model__img
+                img(src='img/trade-in.png' alt='Trade-In').model__tradein.model__tradein--isvisible
+                .model__info
+                    h1.model__name VERTU <br> Signature Touch VERTU FOR BENTLEY
+                    .model__icons
+                        .model__icon
+                            i.stock
+                            span Акционные товары
+                        .model__icon
+                            i.new
+                            span Новинки
+                        .model__icon
+                            i.hit
+                            span Хит продаж
+                        .model__icon
+                            i.minprice
+                            span Минимальная цена
+                        .model__icon
+                            i.sale
+                            span Распродажа
+                        .model__icon
+                            i.exsclusive
+                            span Экслюзивное предложение
+                    h3.model__description-title Описание
+                    p.model__description.
+                        Эксклюзивная разработка Vertu и Bentley, выпущенная ограниченным тиражом в 2 000 экземпляров. 4,7-дюймовый экран, 1080х1920 пикс./ Модуль LTE/ Стереодинамики/ 4-ядерный процессор Snapdragon 801 с рабочей частотой 2,3 ГГц/ 64 ГБ внутренней памяти/ Аккумуляторная батарея на 2275 мАч/ 13-Мп основная камера и 2,1-Мп фронтальная.
+                    p.model__oldprice 5 400 € / 347 789 Р.
+                    p.model__newprice 5 100 € / 317 789 Р.
+                    a(href='javascript:void(0)' title='Купить VERTU Signature Touch VERTU FOR BENTLEY').model__btn.model__btn--buy Купить
+                    a(href='javascript:void(0)' title='Купить кредит VERTU Signature Touch VERTU FOR BENTLEY').model__btn В кредит
+                    a(href='javascript:void(0)' title='Traid-In VERTU Signature Touch VERTU FOR BENTLEY').model__btn Traid-In
+                    ul.model__btn-list
+                        li.model__btn-list-item
+                            a(href='javascript:void(0)' title='Купить VERTU Signature Touch VERTU FOR BENTLEY').model__btn-list-link.model__btn-list-link--buy.js--subbtn-dropdown Купить
+                            ul.model__subbtn-list
+                                li.model__btn-list-item
+                                    a(href='javascript:void(0)' title='Купить кредит VERTU Signature Touch VERTU FOR BENTLEY').model__btn-list-link В кредит
+                                li.model__btn-list-item
+                                    a(href='javascript:void(0)' title='Traid-In VERTU Signature Touch VERTU FOR BENTLEY').model__btn-list-link Traid-In
+
+            a(href='javascript:void(0)' title='Следующая модель').model__arrow.model__arrow--next
+
+    // Breadcrumbs
+    .model-catalog
+        .wrapper
+            .col-xs-12
+                span.breadcrumbs
+                    a(href="javascript:void(0)" title='Каталог') Каталог
+                    span /
+                    a(href="javascript:void(0)" title='Vertu') Vertu
+                    span /
+                    span Vertu Signature Touch
+
+    // Another phones
+    .phones-wrp
+        .wrapper
+            h2 Другие телефоны
+                a(href="catalog.html", class="slider-lnk slider-lnk--catalog")
+                    span Каталог
+            p коллекции vertu signature touch
+
+            .phones-inner-wrp
+                - for (i=0; i<11; i++)
+                    +newCatalogSlider2('icons__item icons__item--exclusive', 'icons__item icons__item--discount','icons__item icons__item--new','icons__item icons__item--sale', 'Vertu Signature Touch Pure Jet Calf', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/phone-item.png')
+
+            a(href='javascript:void(0)' title='Другие Vertu').phones-btn Другие Vertu
+
+    // Slider
+    .accessories
+        .accessories-slider тут будет слайдер
+
+
+    // Info
+    .product-info
+        .wrapper
+            h2.product-info__title Информация о Vertu Signature touch
+            img(src='img/product-item.png' alt='Vertu Signature touch' title='Vertu Signature touch').product-info__img
+            p.product-info__text.first.
+                Отличительные черты неповторимого Vertu for Bentley — корпус из рифленого титана и элегантная прострочка в стиле отделки салонов автомобилей Bentley. Фирменная рифлёная насечка Bentley на боковых гранях сверхпрочного, но в тоже время очень легкого титанового корпуса идеально сочетается с узором гильоше на задней панели. Передняя панель телефона декорирована фирменным логотипом Bentley «B». Исключительное внимание к деталям легкого титанового корпуса идеально сочетается с узором гильоше на задней панели. Передняя панель телефона декорирована фирменным логотипом Bentley «B». Исключительное внимание к деталям чувствуется во всем...
+            p.product-info__text.second.
+                Отличительные черты неповторимого Vertu for Bentley — корпус из рифленого титана и элегантная прострочка в стиле отделки салонов автомобилей Bentley. Фирменная рифлёная насечка Bentley на боковых гранях сверхпрочного, но в тоже время очень легкого титанового корпуса идеально сочетается с узором гильоше на задней панели. Передняя панель телефона декорирована фирменным логотипом Bentley «B». Исключительное внимание к деталям легкого титанового корпуса идеально сочетается с узором гильоше на задней панели. Передняя панель телефона декорирована фирменным логотипом Bentley «B». Исключительное внимание к деталям чувствуется во всем ... вплоть до винтиков, созданных
+            a(href='javascript:void(0)' title='Развернуть описание').product-info__plus.js-product-btn
+
+    .service-info
+        .wrapper.clearfix
+            .col-md-6.service-info__service
+                h2 УСЛУГИ
+                mixin serviceMain(img, h3, txt)
+                    .service-info__service__item
+                        a(href="", class="service-info__service__item--img")
+                            span.plus
+                            img(src=img, alt="")
+                        .service-info__service__item--txt
+                            a(href="")
+                                h3=h3
+                            p=txt
+                +serviceMain('img/serv-1.jpg', 'СЕРВИСЫ VERTU', 'Телефоны Верту создаются для самых взыскательных клиентов. Мир владельцев Верту – это услуги, вещи, отдых и развлечения преимиум-класса. Следуя пожеланиям своих клиентов, компания Vertu разработала набор персональных услуг, цель которых – обеспечить высочайший уровень сервиса.')
+                +serviceMain('img/serv-2.jpg', 'ВИДЫ Ремонта', 'Все сотовые телефоны проекта vertu.msk.ru продаются с гарантийным талоном производителя. Это гарантирует Вам качественное обслуживание приобретенного оборудования в случае его неисправности.')
+                .ta-c
+                    a(href="", class="plus") все услуги
+            .col-md-6.service-info__info
+                a(href="", class="youtube")
+                h2 ИНФОРМАЦИЯ
+                iframe(src="http://www.youtube.com/embed/fH9ntPr1RTw?wmode=opaque", width="100%", height="315", frameborder="0")
+                .service-info__info--header
+                    h4 Vertu Constellation V. Робот и крокодил.
+                .ta-c
+                    a(href="", class="plus") больше информации

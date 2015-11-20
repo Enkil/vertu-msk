@@ -1,0 +1,122 @@
+extends template.jade
+
+block content
+  .main-slider
+    .main-slider__slick
+      .main-slider__slick__item(style="background:url(img/main-slider-1.jpg) 50% 0 no-repeat")
+        .wrapper
+          .main-slider__slick__item__info
+            a(href="", class="plus") ПОДРОБНО
+            p Смартфон премиум класса стал еще более привлекательным, не только из-за своего изумительного внешнего убранства. В Vertu Aster впечатляет еще и начинка продукта. Смартфон премиум класса стал еще более привлекательным, не только из-за своего изумительного внешнего убранства. В Vertu Aster впечатляет еще и начинка продукта.
+      .main-slider__slick__item(style="background:url(img/main-slider-1.jpg) 50% 0 no-repeat")
+        .wrapper
+          .main-slider__slick__item__info
+            a(href="", class="plus") ПОДРОБНО
+            p 2 Смартфон премиум класса стал еще более привлекательным, не только из-за своего изумительного внешнего убранства. В Vertu Aster впечатляет еще и начинка продукта.
+      .main-slider__slick__item(style="background:url(img/main-slider-1.jpg) 50% 0 no-repeat")
+        .wrapper
+          .main-slider__slick__item__info
+            a(href="", class="plus") ПОДРОБНО
+            p Смартфон премиум класса стал еще более привлекательным, не только из-за своего изумительного внешнего убранства. В Vertu Aster впечатляет еще и начинка продукта. 
+  .catalog-filter
+    .wrapper
+      form(action="#")
+        .catalog-filter__list
+          select(class="catalog-filter__select")
+            option(value="Выберите категорию") -- Выберите категорию --
+            option(value="Категория 1") Категория 1
+            option(value="Категория 2") Категория 2
+            option(value="Категория 3") Категория 3
+          select(class="catalog-filter__select")
+            option(value="Выберите модель") -- Выберите модель --
+            option(value="Модель 1") Модель 1
+            option(value="Модель 2") Модель 2
+            option(value="Модель 3") Модель 3
+        .catalog-filter__list
+          .catalog-filter__price
+            label(for="price-st") Цена от:
+            input(type="text", name="", id="price-st", class="catalog-filter__txt")
+            label(for="price-fn") до:
+            input(type="text", name="", id="price-fn", class="catalog-filter__txt")
+          input(type="checkbox", name="", id="is", class="catalog-filter__checkbox")
+          label(for="is") В наличии
+          input(type="checkbox", name="", id="old", class="catalog-filter__checkbox")
+          label(for="old") Б/У
+        input(type="submit", value="показать в каталоге", class="catalog-filter__inp-subm")
+  .new-catalog.new-catalog--index
+    .wrapper
+      h2 НОВИНКИ В КАТАЛОГЕ:
+      .new-catalog__menu
+        a(href="catalog.html", class="slider-lnk slider-lnk--catalog") 
+          span Каталог
+        span(class="tabs__sm tabs__sm--index") -- Меню --
+        ul(id="new-catalog", class="tabs tabs--index")
+          li(class="tabs__item current") 
+            a(href="tab-1.html", data-item="-- Все --") Все
+          li(class="tabs__item")
+            a(href="tab-2.html", data-item="-- Телефоны --") Телефоны
+          li(class="tabs__item")
+            a(href="tab-2.html", data-item="-- Часы --") Часы
+          li(class="tabs__item")
+            a(href="tab-2.html", data-item="-- Украшения --") Украшения
+          li(class="tabs__item")
+            a(href="tab-2.html", data-item="-- Аксессуары --") Аксессуары
+
+    div(id="new-catalog__container", class="tabs-container")
+
+  .special-offers
+    .wrapper.row
+      h2 специальные предложения
+      .special-offers__list
+        mixin specialOffers(img, h3, txt)
+          .special-offers__list__item
+            a(href="", class="special-offers__list__item--img", style=img)
+              h3=h3
+            p=txt
+        +specialOffers('background:url(img/spec-1.jpg)', 'Телефоны', 'Эксклюзивные работы наших мастеров по тюнингу и украшению ваших телефонов')
+        +specialOffers('background:url(img/spec-2.jpg)', 'Часы', 'Мы предлагаем приобрести широкий выбор часов мировых брендов по лучшим ценам')
+        +specialOffers('background:url(img/spec-3.jpg)', 'Украшения', 'Приобретайте эксклюзивные украшения с ярким дизайном по привлекательным ценам')
+        +specialOffers('background:url(img/spec-4.jpg)', 'Аксессуары', 'Эсклюзивные подарки и стильные аксессуары')
+
+  .about-boutique.about-boutique--index
+    .wrapper
+      h2 о бутике
+      .about-boutique__list.clearfix
+        mixin aboutBoutique(img, h3, txt)
+          .about-boutique__list__item
+            a(href="", class="about-boutique__list__item--img")
+              span.plus
+              img(src=img, alt="")
+            .about-boutique__list__item--txt
+              h3=h3
+              p=txt
+        +aboutBoutique('img/about-1.jpg', 'Телефоны', 'Большинство пользователей привыкли к тому, что телефоны Vertu ориентируются на свое внешнее превосходство, отодвигая внутренние характеристики на второй план. ')
+        +aboutBoutique('img/about-2.jpg', 'Часы', 'Большинство пользователей привыкли к тому, что телефоны Vertu ориентируются на свое внешнее превосходство, отодвигая внутренние характеристики на второй план. ')
+        +aboutBoutique('img/about-3.jpg', 'Украшения', 'Большинство пользователей привыкли к тому, что телефоны Vertu ориентируются на свое внешнее превосходство, отодвигая внутренние характеристики на второй план. ')
+        +aboutBoutique('img/about-4.jpg', 'Разное', 'Большинство пользователей привыкли к тому, что телефоны Vertu ориентируются на свое внешнее превосходство, отодвигая внутренние характеристики на второй план. ')
+
+  .service-info
+    .wrapper.clearfix
+      .col-md-6.service-info__service
+        h2 УСЛУГИ
+        mixin serviceMain(img, h3, txt)
+          .service-info__service__item
+            a(href="", class="service-info__service__item--img")
+              span.plus
+              img(src=img, alt="")
+            .service-info__service__item--txt
+              a(href="") 
+                h3=h3
+              p=txt
+        +serviceMain('img/serv-1.jpg', 'СЕРВИСЫ VERTU', 'Телефоны Верту создаются для самых взыскательных клиентов. Мир владельцев Верту – это услуги, вещи, отдых и развлечения преимиум-класса. Следуя пожеланиям своих клиентов, компания Vertu разработала набор персональных услуг, цель которых – обеспечить высочайший уровень сервиса.')
+        +serviceMain('img/serv-2.jpg', 'ВИДЫ Ремонта', 'Все сотовые телефоны проекта vertu.msk.ru продаются с гарантийным талоном производителя. Это гарантирует Вам качественное обслуживание приобретенного оборудования в случае его неисправности.')
+        .ta-c
+          a(href="", class="plus") все услуги
+      .col-md-6.service-info__info
+        a(href="", class="youtube")
+        h2 ИНФОРМАЦИЯ
+        iframe(src="http://www.youtube.com/embed/fH9ntPr1RTw?wmode=opaque", width="100%", height="315", frameborder="0")
+        .service-info__info--header
+          h4 Vertu Constellation V. Робот и крокодил. 
+        .ta-c
+          a(href="", class="plus") больше информации

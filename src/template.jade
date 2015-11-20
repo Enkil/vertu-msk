@@ -1,0 +1,265 @@
+doctype html
+head
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,100&subset=latin,cyrillic-ext")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300&subset=latin,cyrillic-ext")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic-ext")
+  //- с помощью миксина и цикла задаем вывод стилей ниже
+  mixin styles(...styles)
+    -each style in styles
+      link(rel="stylesheet", href=style)
+  +styles('css/plugins/bootstrap.css', 'css/plugins/slick.css', 'css/plugins/jquery.arcticmodal.css', 'css/vertu-msk.css')
+body
+  header 
+    .wrapper.row
+      .clearfix
+        .logo
+          a(href="index.html")
+            img(src="img/logo.png", alt="")
+        .lang-menu-mobile
+          .sm-menu
+          .lang-mobile
+            a(href="") RU
+        .lang-menu
+          .lang
+            a(href="", class="active") RU 
+            a(href="") EN
+          menu.m-small
+            li 
+              a(href="about.html") о БУТИКЕ
+            li
+              a(href="") контакты
+        .cart-currensy-mobile
+          a(href="", class="cart-mob")
+          a(href="", class="curr-mob")
+          a(href="", class="search-mob")
+        .cart-currensy
+          .currensy
+            .currensy__l
+              | КУРС:
+            .currensy__r
+              span $ = 58,456 P
+              span E = 62,427 P
+          a(href="", class="cart")
+          a(href="", class="currensy-mob")
+          a(href="", class="search-mob")
+      .main-menu.clearfix
+        a(href="index.html", class="home")
+        .search
+        .main-m
+          menu
+            li
+              a(href="javascript:void(0)", class="main-m__item") Телефоны
+              .sub-m
+                .close-m
+                menu
+                  li(class="sub-m__item", data-img="menu-1")
+                    a(href="javascript:void(0)") Vertu
+                    menu.third-m
+                      li
+                        a(href="") Vertu Aster
+                      li
+                        a(href="") Signature Touch
+                      li
+                        a(href="") Constellation V
+                      li
+                        a(href="") Vertu Ti
+                      li
+                        a(href="") Signature S Design
+                      li
+                        a(href="") Signature S Diamonds
+                      li
+                        a(href="") Signature S Design Carbon
+                  li(class="sub-m__item", data-img="menu-2")
+                    a(href="javascript:void(0)") Tag Heuer
+                    menu.third-m
+                      li
+                        a(href="") Meridiist
+                      li
+                        a(href="") Racer
+                      li
+                        a(href="") Link
+                      li
+                        a(href="") MERIDIIST Gulf
+                      li
+                        a(href="") Jewelry Collection
+                      li
+                        a(href="") GMT Collection
+                      li
+                        a(href="") MERIDIIST Automobili Lamborghini
+                  li(class="sub-m__item", data-img="menu-3")
+                    a(href="javascript:void(0)") Savelli
+                    menu.third-m
+                      li
+                        a(href="") Jardin Secret Elegante
+                      li
+                        a(href="") Jardin Secret Precieuse
+                      li
+                        a(href="") Jardin Secret Merveilleuse
+                      li
+                        a(href="") Gemfields
+                  li(class="sub-m__item", data-img="menu-4")
+                    a(href="javascript:void(0)") Tonino Lamborghini
+                    menu.third-m
+                      li
+                        a(href="") Tonino Lamborghini Antares
+                      li
+                        a(href="") Tonino Lamborghini 88 Tauri
+                  li(class="sub-m__item", data-img="menu-5")
+                    a(href="javascript:void(0)") Nokia
+                    menu.third-m
+                      li
+                        a(href="") Nokia 8800 Gold Arte
+                      li
+                        a(href="") Nokia 8800 Carbon Arte
+                      li
+                        a(href="") Nokia 8800 Sapphire Arte Brown
+                      li
+                        a(href="") Nokia 8800 Sapphire Arte Black
+                      li
+                        a(href="") Nokia 8800 Arte Black
+                      li
+                        a(href="") Nokia 8910
+                  li(class="sub-m__item", data-img="menu-6")
+                    a(href="javascript:void(0)") Apple
+                    menu.third-m
+                      li
+                        a(href="") Apple iPhone 6s
+                      li
+                        a(href="") Apple iPhone 6s Plus
+                      li
+                        a(href="") Apple iPhone 6
+                      li
+                        a(href="") Apple iPhone 6 Plus
+                      li
+                        a(href="") Apple iPhone 5s
+                  li(class="sub-m__item", data-img="menu-7")
+                    a(href="javascript:void(0)") Rolex
+                    menu.third-m
+                      li
+                        a(href="") Daytona
+                      li
+                        a(href="") GMT-Master II
+                      li
+                        a(href="") Submariner
+                      li
+                        a(href="") Yacht-Master II
+                  li(class="sub-m__item", data-img="menu-8")
+                    a(href="javascript:void(0)") Ulysse Nardin
+                    menu.third-m
+                      li
+                        a(href="") Anniversary 160
+                      li
+                        a(href="") Caprice
+                      li
+                        a(href="") Complications
+                      li
+                        a(href="") Dual Time
+                      li
+                        a(href="") Dual Time Ladies
+                      li
+                        a(href="") Executive Dual Time
+                      li
+                        a(href="") Executive Dual Time Lady
+                      li
+                        a(href="") Freak
+                      li
+                        a(href="") GMT Perpetual
+                      li
+                        a(href="") Lady Diver
+                      li
+                        a(href="") Macho
+                      li
+                        a(href="") Marine Collection
+                      li
+                        a(href="") Michelangelo
+                      li
+                        a(href="") Moonstruck
+                      li
+                        a(href="") Quadrato Dual Time
+                      li
+                        a(href="") San Marco
+                  li(class="sub-m__item", data-img="menu-9")
+                    a(href="javascript:void(0)") Breitling
+            li
+              a(href="javascript:void(0)", class="main-m__item") Часы
+            li
+              a(href="javascript:void(0)", class="main-m__item") Украшения
+            li
+              a(href="javascript:void(0)", class="main-m__item") Аксессуары
+            li
+              a(href="service.html", class="main-m__item") Услуги
+            li
+              a(href="javascript:void(0)", class="main-m__item") Информация
+
+        .menu-popup
+          .wrapper
+            menu.sub-m
+              li
+                a(href="") Vertu
+                menu.third-m
+                  li
+                    a(href="") Vertu Aster
+                  li
+                    a(href="") Signature Touch
+                  li
+                    a(href="") Constellation V
+                  li
+                    a(href="") Vertu Ti
+                  li
+                    a(href="") Signature S Design
+                  li
+                    a(href="") Signature S Diamonds
+                  li
+                    a(href="") Signature S Design Carbon
+              li
+                a(href="") Tag Heuer
+              li
+                a(href="") Savelli
+              li
+                a(href="") Tonino Lamborghini
+              li
+                a(href="") Nokia
+              li
+                a(href="") Apple
+              li
+                a(href="") Другие модели
+              li
+                a(href="") Телефоны б/у
+
+
+
+
+  block content
+
+  footer
+    .wrapper
+      .footer-phone 
+        | +7 (915) 037-70-70
+    .footer-m__sm
+    .footer-m
+      .wrapper
+        | Здесь меню, которое когда-нибудь нарисует дизайнер
+    .wrapper
+      ul.soc-icons
+        li(class="soc-icons__item soc-icons__item--you")
+          a(href="")
+        li(class="soc-icons__item soc-icons__item--fb")
+          a(href="")
+        li(class="soc-icons__item soc-icons__item--tw")
+          a(href="")
+        li(class="soc-icons__item soc-icons__item--p")
+          a(href="")
+        li(class="soc-icons__item soc-icons__item--in")
+          a(href="")
+      .attention
+        p Внимание. Данная интернет-страница носит сугубо рекламно-информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса РФ. Точную и окончательную информацию о наличии и стоимости указанных товаров Вы можете получить, связавшись с нами по телефонам: (915) 037-70-70 или email: zakaz@vertu.msk.ru.
+        .copyright
+          p &copy; 2015. Vertu.msk.ru. Все права защищены
+
+  //- с помощью миксина и цикла задаем вывод скриптов ниже
+  mixin scripts(...scripts)
+    -each script in scripts
+      script(src=script)
+  +scripts('https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', 'js/plugins/slick.min.js', 'js/plugins/jquery.arcticmodal.js', 'js/vertu-msk.js')

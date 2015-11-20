@@ -1,0 +1,28 @@
+.service-slider.js-slick
+  mixin serviceSlider(img, name, material, descr, euroOld, euro, rubOld, rub)
+    .service-slider__item
+      .service-slider__item__img(style="background:url('img/" + img + ".jpg') 50% 0 no-repeat")
+        img(src="img/bg/service-slider.png", alt="")
+      .service-slider__item__info
+        h4=name
+        h6=material
+        .txt=descr
+        .service-slider__item__info__price-old
+          span(class="price-old")=euroOld
+          span(class="slash") /
+          span(class="price-old")=rubOld
+        .service-slider__item__info__price-current
+          span(class="price-current")=euro
+          span(class="slash") /
+          span(class="price-current")=rub
+        .buy-buttons
+          button(class="btn btn--buy") Купить
+          button(class="btn btn--credit") в кредит
+          button(class="btn btn--trade-in") trade-in
+
+  +serviceSlider('slider-10', 'Vertu Signature Touch Jet Alligator', 'Материал: 39 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 400 €', '5 550 €', '382 000 Р', '398 000 р.')
+  +serviceSlider('slider-11', 'Vertu Signature Touch Jet Alligator', 'Материал: 139 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р')
+  +serviceSlider('slider-10', 'Vertu Signature Touch Jet Alligator', 'Материал: 49 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р')
+  +serviceSlider('slider-11', 'Vertu Signature Touch Jet Alligator', 'Материал: 59 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р')
+  +serviceSlider('slider-10', 'Vertu Signature Touch Jet Alligator', 'Материал: 69 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р')
+  +serviceSlider('slider-11', 'Vertu Signature Touch Jet Alligator', 'Материал: 79 000 руб.', 'Титановый корпус c черным PVD-покрытием на задней крышке / поликристаллический дисплей / отделка из черной кожи аллигатора.', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р')

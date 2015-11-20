@@ -1,0 +1,166 @@
+extends template.jade
+
+block content
+  .service-item
+    .service-item__info
+      .wrapper
+        .col-md-7.col-md-offset-5.col-lg-6.col-lg-offset-6
+          h2 РЕМОНТ VERTU
+          p В случае возникновения любой технической неисправности, Вы всегда сможете отремонтировать свой телефон, причем сделать это в максимально короткие сроки. Мы сотрудничаем только с официальными сервисными центрами, которые осуществляют все гарантийное и постгарантийное обслуживание товаров.Перечень таких центров размещен в гарантийном талоне.
+          p Мы понимаем, что ремонт телефона неизбежно связан с некоторыми неудобствами для клиента, поэтому стараемся осуществить все работы в течение одного дня, а не нескольких месяцев. Для ремонта используются исключительно оригинальные детали.Владельцам карт привилегированного обслуживания предоставляется гарантийное обслуживание и быстрая компетентная помощь в решении любых технических проблем.
+          span.btn заказать услугу
+    .service-item__tabs
+      .wrapper
+        .col-xs-12
+          span.breadcrumbs 
+            a(href="") Услуги
+            span / 
+            span Ремонт Vertu
+          h4 В данном разделе Вы можете ознакомиться со стоимостью ремонтных работ, выбрав интересующую Вас модель:
+          .ta-c
+            span.service-tabs-lnk__sm
+              | -- Модель --
+          menu.service-tabs-lnk
+            li(class="service-tabs-lnk__item js-service-tabs-lnk", data-target="1") 
+              div(class="service-tabs-lnk__item__content js-model-item")
+                span(data-item="VERTU Aster") VERTU Aster
+            li(class="service-tabs-lnk__item js-service-tabs-lnk", data-target="2") 
+              div(class="service-tabs-lnk__item__content js-model-item")
+                span(data-item="Vertu (Android)") Vertu (Android)
+            li(class="service-tabs-lnk__item js-service-tabs-lnk", data-target="3") 
+              div(class="service-tabs-lnk__item__content js-model-item")
+                span(data-item="Vertu Ascent") Vertu Ascent
+            li(class="service-tabs-lnk__item js-service-tabs-lnk", data-target="4") 
+              div(class="service-tabs-lnk__item__content js-model-item")
+                span(data-item="Vertu Constellation") Vertu Constellation
+            li(class="service-tabs-lnk__item js-service-tabs-lnk", data-target="5") 
+              div(class="service-tabs-lnk__item__content js-model-item")
+                span(data-item="Vertu Signature") Vertu Signature
+          .service-tabs.js-height
+            div(class="service-tabs__item service-tabs__item--1 js-tab-item", data-result="1")
+              .clearfix.service-tabs__item__header
+                div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__header--1") Перечень работ
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--2 desktop") Vertu Aster
+              mixin vertuTab(name, price1)
+                .clearfix.service-tabs__item__row
+                  div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__col--1")=name
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--2 desktop")
+                    span=price1
+              +vertuTab('Чистка, профилактика', '2 500')
+              +vertuTab('Диагностика всего аппарата', '6 000')
+              +vertuTab('Восстановление после воды', '8 000')
+              +vertuTab('Замена системного шлейфа', '18 000')
+              +vertuTab('Восстановление шлейфа', '15 000')
+              +vertuTab('Восстановление корпуса(полировка)', 'по запросу')
+              +vertuTab('Замена кожи', '6 000')
+              +vertuTab('Восстановление подсветки', '6 000')
+              button(class="btn", type="submit") заказать выбранное
+            div(class="service-tabs__item service-tabs__item--3 js-tab-item", data-result="2")
+              .clearfix.service-tabs__item__header
+                div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__header--1") Перечень работ
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--2 desktop") Vertu Ti (Android)
+                div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__header--3 desktop") Constellation V 
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--4 desktop") Signature Touch
+              mixin vertuTab(name, price1, price2, price3)
+                .clearfix.service-tabs__item__row
+                  div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__col--1")=name
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--2 desktop")
+                    if price1 !== '' 
+                      span=price1
+                  div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__col--3 desktop")
+                    if price2 !== '' 
+                      span=price2
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--4 desktop")
+                    if price3 !== '' 
+                      span=price3
+              +vertuTab('Замена кожи', '6 000', '15 000', '15 000')
+              +vertuTab('Замена кнопки', '6 000', '15 000', '15 000')
+              +vertuTab('Восстановление подсветки', '6 000', '15 000', '15 000')
+              +vertuTab('Замена болтов', '6 000', '', '15 000')
+              +vertuTab('Замена полифонического динамика', '', '15 000', '15 000')
+              +vertuTab('Замена сим-приемника', '6 000', 'по запросу', '')
+              +vertuTab('Замена полифонического динамика', '6 000', '15 000', '18 000')
+              +vertuTab('Замена боковой релинги', '6 000', '15 000', '18 000')
+              button(class="btn", type="submit") заказать выбранное
+            div(class="service-tabs__item service-tabs__item--3 js-tab-item", data-result="3")
+              .clearfix.service-tabs__item__header
+                div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__header--1") Перечень работ
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--2 desktop") Ascent
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--3 desktop") Ascent Ti
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--4 desktop") Ascent X
+              mixin vertuTab(name, price1, price2, price3)
+                .clearfix.service-tabs__item__row
+                  div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__col--1")=name
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--2 desktop")
+                    if price1 !== '' 
+                      span=price1
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--3 desktop")
+                    if price2 !== '' 
+                      span=price2
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--4 desktop")
+                    if price3 !== '' 
+                      span=price3
+              +vertuTab('Замена керамики', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Замена внешней передней части', '', '15 000', '15 000', '18 000')
+              +vertuTab('Замена задней крышки', '6 000', 'по запросу', '15 000', '')
+              +vertuTab('Ремонт механизмов открывания задней крышки', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Восстановление платы после попадания воды', '6 000', '15 000', '15 000', '18 000')
+              button(class="btn", type="submit") заказать выбранное
+            div(class="service-tabs__item service-tabs__item--4 js-tab-item", data-result="4")
+              .clearfix.service-tabs__item__header
+                div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__header--1") Перечень работ
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--2 desktop") Vertu Constellation
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--3 desktop") Vertu Constellation Ayxta
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--4 desktop") Vertu Constellation Quest
+                div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__header--5 desktop") Vertu Constellation Touch
+              mixin vertuTab(name, price1, price2, price3, price4)
+                .clearfix.service-tabs__item__row
+                  div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__col--1")=name
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--2 desktop")
+                    if price1 !== '' 
+                      span=price1
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--3 desktop")
+                    if price2 !== '' 
+                      span=price2
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--4 desktop")
+                    if price3 !== '' 
+                      span=price3
+                  div(class="col-xs-12 col-sm-2 service-tabs__item__col service-tabs__item__col--5 desktop")
+                    if price4 !== '' 
+                      span=price4
+              +vertuTab('Замена керамики', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Замена стекла', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Замена дисплея', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Восстановление дисплея', '6 000', '', '15 000', '18 000')
+              +vertuTab('Замена внешней передней части', '', '15 000', '15 000', '18 000')
+              +vertuTab('Замена задней крышки', '6 000', 'по запросу', '15 000', '')
+              +vertuTab('Ремонт механизмов открывания задней крышки', '6 000', '15 000', '15 000', '18 000')
+              +vertuTab('Восстановление платы после попадания воды', '6 000', '15 000', '15 000', '18 000')
+              button(class="btn", type="submit") заказать выбранное
+            div(class="service-tabs__item service-tabs__item--3 js-tab-item", data-result="5")
+              .clearfix.service-tabs__item__header
+                div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__header--1") Перечень работ
+                div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__header--2 desktop") Signature M design
+                div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__header--3 desktop") Signature S design
+              mixin vertuTab(name, price1, price2)
+                .clearfix.service-tabs__item__row
+                  div(class="col-xs-12 col-sm-4 service-tabs__item__col service-tabs__item__col--1")=name
+                  div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__col--2 desktop")
+                    if price1 !== '' 
+                      span=price1
+                  div(class="col-xs-12 col-sm-3 service-tabs__item__col service-tabs__item__col--3 desktop")
+                    if price2 !== '' 
+                      span=price2
+              +vertuTab('Восстановление дисплея', '6 000', '')
+              +vertuTab('Замена внешней передней части', '', '18 000')
+              +vertuTab('Замена задней крышки', '6 000', 'по запросу')
+              +vertuTab('Ремонт механизмов открывания задней крышки', '15 000', '18 000')
+              +vertuTab('Восстановление платы после попадания воды', '12 000', '8 000')
+              button(class="btn", type="submit") заказать выбранное
+    .bordered-info.clearfix.bordered-info--service
+      .wrapper
+        .col-xs-12
+          h2 несколько слов о гарантии VERTU:
+          .bordered-info__txt
+            p Все сотовые телефоны проекта vertu.msk.ru продаются с гарантийным талоном производителя. Это гарантирует Вам качественное обслуживание приобретенного оборудования в случае его неисправности. Все сотовые телефоны проекта vertu.msk.ru продаются с гарантийным талоном производителя. Это гарантирует Вам качественное обслуживание приобретенного оборудования в случае его неисправности. Все гарантийное и послегарантийное обслуживание товаров производится сервисными центрами. 
+            p Перечень сервисных центров приведен в гарантийном талоне. Гарантийный срок составляет: для телефонов 1 год с даты продажи (если не указано иное), в гарантийном талоне. В течение гарантийного срока производится бесплатное гарантийное обслуживание (ремонт) телефона, при условии соблюдения потребителем условий эксплуатации и хранения. Даже если на корпус оригинальной модели за время эксплуатации была нанесен рисунок или сделана инкрустация мы сможем оказать гарантийное обслуживание в рамках гарантии производителя.

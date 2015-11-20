@@ -1,0 +1,2737 @@
+/**
+ *
+ * Summary:
+ *
+ *  0. ELEMENT
+ *    - 0.1. TYPE ELEMENT
+ *    - 0.2. TYPE ELEMENT
+ *  1. TEMPLATE PAGE
+ *    - 1.1. HEADER
+ *    - 1.2. MENU
+ *    - 1.3. FOOTER
+ *  2. MAIN PAGE
+ *    - 2.1. MAIN SLIDER
+ *    - 2.2. CATALOG FILTER
+ *    - 2.3. NEW IN CATALOG
+ *    - 2.4. SPECIAL OFFERS
+ *    - 2.5. ABOUT BOUTIQUE
+ *    - 2.6. SERVICE-INFO
+ *  3. ABOUT PAGE
+ *    - 3.1. ABOUT INFO
+ *    - 3.2. TEAM
+ *    - 3.3. LICENSE
+ *  4. SERVICE PAGE
+ *    - 4.1. SERVICE PAGE INFO
+ *    - 4.2. SERVICE VERTU
+ *    - 4.3. SERVICE SLIDER
+ *    - 4.3. SERVICE BOTTOM
+ *  5. SERVICE ITEM PAGE
+ *    - 5.1. SERVICE ITEM INFO
+ *    - 5.2. SERVICE ITEM TABS
+ *  6. 
+ *    - 6.1. 
+ *    - 6.2. 
+ *  7. 
+ *    - 7.1. 
+ *    - 7.2. 
+ *  8. 
+ *    - 8.1. 
+ *    - 8.2. 
+ */
+
+@import 'nib'
+$xxs = "screen and (max-width : 479px)"
+$xs = "screen and (min-width : 480px)"
+$xsm = "screen and (max-width : 767px)"
+$sm = "screen and (min-width : 768px)"
+$xmd = "screen and (max-width : 1009px)"
+$md = "screen and (min-width : 1010px)"
+$lg = "screen and (min-width : 1140px)"
+$xlg = "screen and (max-width : 1140px)"
+$extlg = "screen and (min-width : 1515px)"
+$xextlg = "screen and (max-width : 1514px)"
+roboto = 'Roboto', sans-serif
+robotoTh = 'Roboto Thin', sans-serif
+robotoSl = 'Roboto Slab', sans-serif
+robotoCd = 'Roboto Condensed', sans-serif
+c_purple = #ec008c
+c_black = #000
+c_white = #fff
+c_gray = #999
+c_lightgray = #ccc
+
+
+marginAuto()
+  margin-left auto
+  margin-right auto
+
+transition(value)
+  transition value .5s linear
+  -webkit-transition value .5s linear
+
+.wrapper 
+  // width 1106px
+  margin-left auto
+  margin-right auto
+  width 100%
+  // outline 1px solid #fff
+  @media $xxs 
+    min-width 300px
+    // outline 1px solid green
+  @media $xs 
+    // width 430px
+    // outline 1px solid lightgray
+  @media $sm 
+    // width 748px
+    // outline 1px solid pink
+  @media $md 
+    width 960px
+    // outline 1px solid lightblue
+  @media $lg 
+    width 1110px
+    // outline 1px solid yellow
+
+  
+body
+  background-color #000
+  color #fff
+  font 14px/1.2 roboto
+  font-weight 400
+ 
+a 
+  color #fff
+  text-decoration none
+  transition all 0.5s ease
+  &:hover 
+    text-decoration underline
+    color darken(white, 20%)
+    transition all 0.5s ease
+
+menu
+p
+h1
+h2
+h3
+h4
+h5
+h6
+ul
+ol
+  margin 0
+  padding 0
+
+h1
+h2
+h3
+  text-transform uppercase
+  text-align center
+
+div:focus
+a:focus
+button:focus
+  outline none
+  
+.ta-c
+  text-align center
+
+plus(display, position, width, border, img)
+  display display
+  position position
+  width width
+  border 1px solid border
+  height 41px
+  letter-spacing 2px
+  z-index 1
+  background rgba(17,17,17,.7) 
+  &:after
+    content ''
+    position absolute
+    width 25px
+    height 25px
+    background url(img) no-repeat
+    margin-top 7px
+    margin-left 9px
+  &:hover 
+    text-decoration none
+
+btn(color, bgcolor, border, fontsize, padding)
+  color color
+  background-color bgcolor
+  border border
+  font-size fontsize
+  padding padding
+  text-transform uppercase
+  font-family robotoSl
+  font-weight 300
+
+.square-brackets
+  &:before 
+    content: '['
+    left 0
+  &:after
+    content ']'
+    right 0
+
+.header-thin
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 100;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-align center
+
+.breadcrumbs 
+  background url('../img/svg/home-b.svg') 0 0 no-repeat
+  padding-left 20px
+  line-height 26px
+  display inline-block
+  font-size 11px
+  color #999
+  a 
+    color #999
+    padding 0 5px
+    text-decoration underline
+
+/* ==========================================================================
+   1.1. HEADER
+   ========================================================================== */
+header
+  @media $xxs 
+    height 130px
+  @media $xs 
+    height 100px
+  @media $sm 
+    height 150px
+.lang-menu-mobile
+  @media $xsm 
+    width 50%
+    float left
+  a
+    text-decoration none
+  @media $sm 
+    display none
+.sm-menu 
+  width 50px
+  height 56px
+  background url('../img/svg/menu_footer.svg') 0 0 no-repeat
+  background-size 50px 56px
+  cursor pointer
+  float left
+  margin 11px 10px 0 0
+  @media $xs 
+    margin-right 25px
+.lang-mobile
+  margin-top 33px
+
+.cart-currensy-mobile
+  @media $xsm 
+    float right
+    width 50%
+    margin-top 28px
+.cart-mob 
+.curr-mob 
+.search-mob
+  @media $xsm 
+    float right
+    margin-right 20px
+.cart-mob 
+  @media $xsm 
+    width 26px
+    height 28px
+    background url("../img/svg/cart-gray.svg") 0 0 no-repeat
+    background-size 26px 28px
+.curr-mob 
+  @media $xsm 
+    width 15px
+    height 28px
+    background url("../img/svg/curr-mob.png") 0 0 no-repeat
+    background-size 15px 28px
+    mt-4  
+.search-mob 
+  @media $xsm 
+    width 28px
+    height 28px
+    background url("../img/svg/search.svg") 0 0 no-repeat
+    background-size 28px 28px
+
+.lang-menu
+  @media $xsm 
+    display none
+  @media $sm 
+    float left
+    width 40%
+
+.lang
+  display inline-block
+  vertical-align top
+  height 80px
+  width 90px
+  padding-top 30px
+  text-align center
+  margin-top 5px
+  box-sizing border-box
+  border-right 1px solid #545454
+  a 
+    font-size 12px
+    text-decoration none
+    color #666
+    &:first-child
+      border-right 1px solid #545454
+      margin-right 5px
+      padding-right 3px
+    &.active 
+      color #fff
+
+.m-small
+  @media $xsm 
+    display none
+  @media $sm 
+    vertical-align top
+    display inline-block
+    margin-top 35px
+    width 68%
+    float right
+  li 
+    float left
+    list-style none
+    margin-left 13%
+    a
+      text-transform uppercase
+      color #666
+      font-family robotoTh
+      font-weight 300
+      font-size 14px
+      transition(opacity)
+      &:hover 
+        text-decoration none
+        transition(opacity)
+
+.cart-currensy
+  @media $xsm 
+    display none
+  @media $sm 
+    float right
+    width 275px
+    height 80px
+    padding-top 30px
+    box-sizing border-box
+.currensy 
+  float left
+  width 200px
+  font-size 0
+  position relative
+  &:after {
+    content ''
+    position absolute
+    top -25px
+    right 0
+    width 1px
+    height 72px
+    background-color #545454;
+  }
+  &__l
+    display inline-block
+    vertical-align middle
+    width 60px
+    font-size 14px
+    color #666
+  &__r 
+    display inline-block
+    vertical-align middle
+    width 140px
+    font-size 14px
+    span 
+      display block  
+      color #999
+.cart
+  float right
+  size 20px
+  margin-right 20px
+  background url('../img/svg/cart-gray.svg') 0 0 no-repeat
+  background-size 20px 20px
+  a
+    border 1px solid #000
+    width 15px
+    height 15px
+    display block
+    border 1px solid #f00
+  
+.logo
+  position absolute
+  left 50%
+  margin 20px 0 0 -65px
+  @media $xxs 
+    margin-top 70px
+  @media $xs 
+    margin-top 20px
+
+
+
+
+/* ==========================================================================
+   1.2. MENU
+   ========================================================================== */
+.main-menu
+  @media $xsm 
+    display none
+  @media $sm 
+    min-height 65px
+    border-bottom 1px solid c_purple
+    padding-top 10px
+    box-sizing border-box
+.home
+  float left
+  display block
+  size 20px
+  margin-left 20px
+  background url('../img/svg/home.svg') 0 -2px no-repeat
+  background-size 20px 20px
+.search
+  float right
+  background url('../img/svg/search.svg') 0 0 no-repeat
+  background-size 20px 20px
+  width 20px
+  height 20px
+  margin-right 18px
+.main-m
+  font-weight 100
+  text-align center
+  font-size 0
+  position absolute
+  right 0
+  left 0
+  margin 0 auto
+  menu
+    width 960px
+    margin 0 auto
+    li
+      list-style none
+      display inline-block
+      font-size 14px
+      margin 0 1.5%
+      text-transform uppercase
+      line-height 20px
+      @media $md 
+        margin 0 3%
+      a
+        color #fff
+        text-decoration none
+        display inline-block
+        padding 0 7px
+        position relative
+        &:hover 
+          color c_purple
+          &:before, 
+          &:after 
+            font-size 20px
+            top -2px
+            position absolute
+          @extend .square-brackets
+
+.menu-popup
+  position absolute
+  display none
+  width 100%
+  background-color #000
+  min-height 500px
+  border 1px solid #fff
+  z-index 2
+  left 0
+
+.sub-m
+  position absolute
+  left 0
+  width 100%
+  z-index 3
+  background url('../img/bg/sub-m.png') 50% 0 no-repeat
+  min-height 511px
+  display none
+  padding-top 35px
+  outline 1px solid c_purple
+  &>menu
+    width 960px
+    margin 0 auto
+    height 405px
+    overflow hidden
+    li
+      display block
+      text-align left
+      width 250px
+      &:hover .third-m
+        // display block
+      a 
+        display inline-block
+        margin-bottom 15px
+        text-transform uppercase
+        font-size 18px
+        font-weight 700
+        &:hover 
+          text-decoration none
+menu.third-m
+  display none
+  margin-top -10px
+  margin-bottom 10px
+  li
+    margin-left 15px
+    a 
+      text-transform none
+      font-family robotoTh
+      font-weight 100
+      font-size 14px
+      margin-bottom 5px
+      &:hover 
+        text-decoration underline
+      &:before,
+      &:after
+        display none
+
+.close-m
+  width 23px
+  height 23px
+  position absolute
+  right 0
+  cursor pointer
+  background url('../img/svg/cross.svg') 0 0 no-repeat
+
+
+/* ==========================================================================
+   1.3. FOOTER
+   ========================================================================== */
+footer 
+  text-align center
+
+.footer-phone
+  font-size 30px
+  font-weight 100
+.footer-m__sm
+  width 55px
+  height 61px
+  margin 30px auto
+  cursor pointer
+  background #000 url('../img/bg/footer-menu.png') 0 0 no-repeat
+  &:before
+    content ''
+    position absolute
+    left 0
+    height 1px
+    background-color #363636
+    width 100%
+    margin-top 30px
+    z-index -1
+.footer-m
+  display none
+  height 300px
+.close
+  size 23px
+  float right
+  background url('../img/bg/close.png') 0 0 no-repeat
+  cursor pointer
+.soc-icons
+  font-size 0
+  margin-bottom 15px
+  &__item
+    display inline-block
+    list-style none
+    size 60px
+    &--you
+      background url('../img/bg/soc-ico-you.png') 50% 50% no-repeat
+    &--fb
+      background url('../img/bg/soc-ico-fb.png') 50% 50% no-repeat
+    &--tw
+      background url('../img/bg/soc-ico-tw.png') 50% 50% no-repeat
+    &--p
+      background url('../img/bg/soc-ico-p.png') 50% 50% no-repeat
+    &--in
+      background url('../img/bg/soc-ico-in.png') 50% 50% no-repeat
+    a
+      display block
+      size 60px
+.attention
+  font-size 10px
+  color #666
+  margin 0 auto
+  padding-bottom 10px
+  @media $xxs 
+    font-size 12px
+    width 90%
+  @media $xs 
+    width 90%
+    font-size 12px
+  @media $lg 
+    width 60%
+  p
+    @media $xxs 
+      margin-bottom 10px
+    @media $xs 
+      margin-bottom 10px
+  
+
+
+
+
+/* ==========================================================================
+   2.1. MAIN SLIDER
+   ========================================================================== */
+.main-slider
+  height 610px
+  @media $xsm 
+    display none
+  &__slick
+    height 610px
+    &__item
+      height 610px
+      position relative
+      &__info
+        margin-top 430px
+        padding 15px 0
+        font-size 16px
+        color c_gray
+        .plus
+          plus(block, static, auto, c_lightgray, '../img/bg/plus.png')
+          float right
+          line-height 41px
+          padding 0 45px 0 15px
+          background-position 100% 50%
+          letter-spacing 2px
+        p 
+          height 75px
+          overflow hidden
+          @media $sm 
+            margin 0px 25% 0px 0
+          @media $md 
+            margin 0 20% 0px 30%
+          @media $lg 
+            margin 0 25% 0px 30%
+  .slick-arrow
+    width 62px
+    height 303px
+    position absolute
+    z-index 1
+    top 85px
+    margin-left -31px
+    background url('../img/bg/main-slider-arrows.png')
+    background-repeat none
+    border 0
+    text-indent -1000000px
+    &.slick-prev
+      left 10%
+    &.slick-next
+      right 10%
+      background-position 100% 0
+  .slick-dots
+    position relative
+    text-align center
+    bottom 50px
+    font-size 0
+    li
+      display inline-block
+      size 22px
+      margin 0 3px
+      cursor pointer
+      background url('../img/bg/main-slider-bullets.png') 100% 0 no-repeat
+      button 
+        background transparent
+        border 0
+    .slick-active
+      background-position 0 0
+
+
+/* ==========================================================================
+   2.2. CATALOG FILTER
+   ========================================================================== */
+.catalog-filter
+  background-color #a6a6a6
+  position relative
+  padding 40px 0 60px
+  text-align center
+  background #a6a6a6 url('../img/bg/catalog-filter.png') 50% 100% no-repeat
+  @media $xxs 
+    display none
+  @media $xs 
+    display none
+  @media $sm 
+    display block
+  &__list
+    display inline-block
+    margin-bottom 30px
+    @media $sm 
+      min-width 590px
+    @media $lg 
+      min-width auto
+  &__select 
+    height 40px
+    border 1px solid #333
+    margin-right 20px
+    color #999
+    @media $sm 
+      width 46%
+    @media $lg 
+      width 215px
+    option
+      height 38px
+      border 1px solid #333
+  &__price
+    margin-right 40px
+    display inline-block
+  &__txt
+    width 100px
+    height 40px
+    border 1px solid #333
+    color c_purple
+    text-align center
+    padding 0 10px
+    box-sizing border-box
+  &__checkbox
+    display none
+    +label
+      padding-left 50px
+      height 40px
+      line-height 40px
+      display inline-block
+      background url('../img/bg/checkbox-bg.png') -40px 0 no-repeat
+      cursor pointer
+    &:checked+label
+      background-position 0 -40px
+  label
+    color c_black
+    margin 0 5px
+    font-size 16px
+  &__inp-subm
+    display block
+    border 1px solid c_white
+    text-transform uppercase
+    margin 0 auto
+    font 14px robotoCd
+    background-color transparent
+    padding 12px 20px 9px
+    letter-spacing 3px 
+
+
+/* ==========================================================================
+   2.3. NEW IN CATALOG
+   ========================================================================== */
+.new-catalog
+  min-height 650px
+  padding-bottom 100px
+  color c_black
+  background-color c_white
+  &--index
+    background #fff url('../img/bg/special-offers-t.png') 50% 100% no-repeat
+    @media $xxs 
+      display none
+  h2
+    font 24px robotoSl
+    font-weight 100
+    color #010101
+    padding-top 40px
+  &__menu
+    position relative
+    text-align center
+    min-height 50px
+    margin-top 25px
+  &__slider
+    font-size 0
+    &__item
+      display inline-block
+      min-width 300px
+      height 480px
+      position relative
+      &__content
+        background url('../img/bg/slider-bg.png') 0 0 no-repeat
+        width 284px
+        height 319px
+        position absolute
+        bottom 0
+        left: 50%;
+        margin-left: -142px;
+        &:hover 
+          .price-current
+            color c_purple
+            transition(color)
+          .new-catalog__slider__item__content--price--bd
+            &:after
+              background-color c_purple
+              transition(background-color)
+          .new-catalog__slider__item__content--cart
+            background url('../img/svg/cart-pink.svg') 0 0 no-repeat
+          .new-catalog__slider__item__content--txt a 
+            color c_purple
+            text-decoration none
+          .icons__item
+            opacity .8
+            transition(opacity)
+        img 
+          margin -100px 0 0 -100px
+          position absolute
+        &--txt
+          width 160px
+          float right
+          margin-top 50px
+          a 
+            font-size 14px
+            font-weight 700
+            color c_black
+            clear both
+            display block
+            text-transform uppercase
+        &--price
+          position: absolute;
+          bottom: 10px;
+          width: 200px;
+          height: 100px;
+          left: 50%;
+          margin-left: -100px;
+          text-align center
+          line-height 1.1
+          &--bd
+            &:after
+              content ''
+              position absolute
+              left 50%
+              margin-left -50px
+              height 1px
+              background-color c_gray
+              width 100px
+              margin-top 5px
+              transition(background-color)
+            span
+              display block
+            .price-old
+              font-size 13px
+              color c_gray
+              text-decoration line-through
+            .price-current
+              font-size 16px
+              font-weight 700
+              transition(color)
+        &--cart
+          size 20px
+          display block
+          margin 10px auto 0
+          background url('../img/svg/cart-black.svg') 0 0 no-repeat
+          transition none
+  .slick-arrow
+    size 22px
+    position absolute
+    border 0
+    background none
+    left 50%
+    bottom -35px
+    &.slick-next
+      margin-left 20%
+      background url('../img/svg/arrow-right.svg') 0 0 no-repeat
+      background-size 20px 20px
+    &.slick-prev
+      margin-left -25%
+      background url('../img/svg/arrow-left.svg') 0 0 no-repeat
+      background-size 20px 20px
+  .slick-dots
+    font-size 0
+    text-align center
+    margin-top 50px
+    li
+      display inline-block
+      padding 0 30px
+      position relative
+      &:after
+        content ''
+        height 1px
+        left 0
+        top 5px
+        position absolute
+        width 100%
+        background-color c_gray
+      button
+        border-radius 50%
+        display block
+        background-color transparent
+        border 0
+        width 10px
+        height 10px
+        position relative
+        z-index 1
+      &.slick-active
+        button
+          border 1px solid c_gray
+          background-color c_purple
+
+.slider-lnk
+  width 75px
+  height 84px
+  position absolute
+  right 0
+  top -60px
+  z-index 1
+  @media $xsm 
+    width 37px
+    height 42px
+  @media $sm 
+    margin -25px 30px 0 0
+  &:hover
+    text-decoration none
+  span 
+    display block
+    color #959595
+    font 14px robotoCd
+    text-transform uppercase
+    padding-top 90px
+    text-align center
+    letter-spacing 2px
+    @media $xsm 
+      display none
+  &--catalog
+    background url('../img/svg/cat-lnk.svg') 0 0 no-repeat
+    background-size 75px 84px
+    @media $xsm 
+      background-size 37px 42px
+  &--gallery
+    background url('../img/svg/gallery.svg') 0 0 no-repeat
+    background-size 75px 84px
+    @media $xsm 
+      background-size 37px 42px
+
+
+
+.tab-container
+  @media $xs 
+    max-width 600px
+    margin 0 auto
+    border 1px solid #f00
+
+
+.icons
+  width 80px
+  overflow hidden
+  margin-bottom 10px
+  &__item
+    size 35px
+    margin-right 5px
+    float left
+    &:hover
+      opacity .8
+      transition(opacity)
+    &--new
+      background url('../img/svg/icon-new.svg') 0 0 no-repeat
+      background-size 35px 35px
+    &--sale
+      background url('../img/svg/icon-sale.svg') 0 0 no-repeat
+      background-size 35px 35px
+    &--min
+      background url('../img/svg/icon-min.svg') 0 0 no-repeat
+      background-size 35px 35px
+    &--hit
+      background url('../img/svg/icon-hit.svg') 0 0 no-repeat
+      background-size 35px 35px
+    &--exclusive
+      background url('../img/svg/icon-exclusive.svg') 0 0 no-repeat
+      background-size 35px 35px
+    &--discount
+      background url('../img/svg/icon-discount.svg') 0 0 no-repeat
+      background-size 35px 35px
+.tabs
+  font-size 0
+  margin-top 25px
+  margin-bottom 50px
+  display inline-block
+  &--index
+    @media $xsm
+      display none
+      width 150px
+      position absolute
+      z-index 1
+      background-color #fff
+      border 1px solid c_gray
+      margin 0
+    @media $sm 
+      display block !important
+  &--service
+    display none
+  li
+    display inline-block
+    list-style none
+    font 14px robotoCd
+    text-transform uppercase
+    letter-spacing 2px
+    padding 10px 17px
+    border-left 1px solid #959595
+    @media $xsm 
+      border-left 0
+      display block
+    &.current
+      background-color #c87eb8
+      a
+        color c_white
+    &:first-child
+      border-left 0
+    a
+      color c_black
+      &:hover 
+        text-decoration none 
+
+.tabs__sm
+  @media $xsm
+    display inline-block
+    margin-top 15px
+    cursor pointer
+    color c_black
+    text-transform uppercase
+    color c_gray
+    letter-spacing 2px
+  &--index
+    @media $sm 
+      display none
+
+
+
+
+
+/* ==========================================================================
+   2.4. SPECIAL OFFERS
+   ========================================================================== */
+.special-offers 
+  background url('../img/bg/special-offers.png') 50% 0 repeat-y
+  padding-top 120px
+  padding-bottom 40px
+  &:before 
+    content ''
+    position absolute
+    background url('../img/bg/corona.png') 50% 0 no-repeat
+    width 166px
+    height 70px
+    left 50%
+    margin -90px 0 0 -83px
+  h2 
+    font-family robotoSl
+    font-size 34px
+
+  &__list
+    margin-top 30px
+    overflow hidden
+    margin-left -10px
+    @media $xsm 
+      marginAuto()
+      width 220px
+    @media $sm 
+      max-width 570px
+      marginAuto()
+    @media $md 
+      max-width 570px
+      marginAuto()
+    @media $lg 
+      max-width 100%
+    &__item
+      float left
+      margin-left 10px
+      &:nth-child(odd)
+        @media $sm 
+          margin-left 0
+        @media $lg 
+          margin-left 10px
+      &:nth-child(1)
+        @media $lg 
+          margin-left 0
+      @media $xsm 
+        width 220px
+        marginAuto()
+        margin-bottom 30px
+      @media $sm 
+        width 270px
+        margin-left 30px
+      @media $lg 
+        margin-left 10px
+      &--img
+        height 270px
+        display block
+        position relative
+        margin-bottom 25px
+        box-shadow inset 0 0 0 5px rgba(178,178,178,.7),
+                   inset 0 0 0 6px rgb(255,255,255)
+        @media $xsm 
+          height 220px
+        @media $sm 
+          height 270px
+        &:before
+          content ''
+          position absolute
+          width 257px
+          top 6px
+          left 6px
+          height 50px
+          background-color rgba(0,0,0,.7)
+          @media $xsm 
+            width 208px
+          @media $sm 
+            width 257px
+        &:hover
+          text-decoration none
+      h3 
+        font-family robotoSl
+        font-weight 100
+        font-size 30px
+        color #fff
+        position relative
+        z-index 2
+        line-height 60px
+      p
+        font-family robotoSl
+        font-size 14px
+        text-align center
+        padding 0 25px
+
+
+
+
+/* ==========================================================================
+   2.5. ABOUT BOUTIQUE
+   ========================================================================== */
+.about-boutique
+  background-color #e6e6e6
+  &--index 
+    padding 70px 0 40px
+    background #e6e6e6 url('../img/bg/about-boutique.png') 50% 0 no-repeat
+    border-bottom 25px solid #333
+  &--service
+    padding 70px 0 40px
+    background #e6e6e6 url('../img/bg/service-vertu.png') 50% 0 no-repeat
+  &--about
+    padding 1px 0 40px
+  h2
+    font-family robotoSl
+    font-weight 100
+    color #010101 
+    font-size 24px
+    @media $sm 
+      font-size 36px
+  &__list
+    margin-left -10px
+    margin-top 50px
+    @media $xsm
+      marginAuto()
+      margin-top 30px
+      width 247px
+    @media $sm 
+      width 560px
+      marginAuto()
+    @media $lg 
+      width auto
+    &__item
+      float left
+      width 270px
+      margin-left 10px
+      padding-right 23px
+      box-sizing border-box
+      &:nth-child(odd)
+        @media $sm 
+          margin-left 0
+        @media $lg 
+          margin-left 10px
+      &:nth-child(1)
+        @media $lg 
+          margin-left 0
+      @media $xxs 
+        margin-left 0
+        margin-bottom 30px
+      @media $xs 
+        width 220px
+        padding-right 0
+        margin-bottom 30px
+        float none
+        margin-right auto
+        margin-left auto
+      @media $sm 
+        width 270px
+        float left
+        padding-right 13px
+        padding-left 10px
+      &--img 
+        vertical-align top
+        display block
+        position relative
+        @media $xs 
+          overflow hidden
+        .plus
+          plus(block, absolute, 45px, c_white, '../img/bg/plus.png')
+          bottom 13px
+          left 50%
+          margin-left -27px
+        img
+          -webkit-filter grayscale(100%)
+          -moz-filter grayscale(100%)
+          -ms-filter grayscale(100%)
+          -o-filter grayscale(100%)
+          filter grayscale(100%)
+          filter gray /* IE 6-9 */
+      h3
+        font-family robotoSl
+        color c_black
+        font-size 23px
+        font-weight 400
+        margin 30px 0
+        padding-bottom 30px
+        border-bottom 3px solid c_black
+      p
+        color c_gray
+        overflow hidden
+        height 147px
+      &:hover 
+        .plus 
+          background-color rgba(115,40,98,.7)
+        img 
+          -webkit-filter grayscale(0%)
+          -moz-filter grayscale(0%)
+          -ms-filter grayscale(0%)
+          -o-filter grayscale(0%)
+          filter grayscale(0%)
+          filter gray /* IE 6-9 */
+        h3 
+          color c_purple
+          border-bottom 3px solid c_gray
+        p 
+          color c_black
+
+
+
+
+/* ==========================================================================
+   2.6. SERVICE-INFO
+   ========================================================================== */
+.service-info
+  background #1d1d1e url('../img/bg/service-info.png') 50% 100% no-repeat
+  padding 60px 0 90px
+  margin-bottom 50px
+  .youtube
+    display block
+    float right
+    width 53px
+    height 59px
+    margin-top -12px
+    background url('../img/bg/youtube-ico.png') 0 0 no-repeat
+  h2 
+    font-family robotoSl
+    font-weight 100
+    text-align left
+    margin-bottom 40px
+    @media $sm 
+      font-size 36px
+  &__service
+    margin-bottom 30px
+    &__item 
+      overflow hidden
+      margin-bottom 25px
+      height 185px
+      @media $xxs 
+        height auto
+      &--img
+        float left
+        width 200px
+        position relative
+        @media $xxs 
+          float none
+          display block
+        .plus
+          plus(block, absolute, 45px, c_white, '../img/bg/plus.png')
+          bottom  4px
+          right 31px
+        &:hover 
+          .plus 
+            background-color rgba(115,40,98,.7)
+            transition(background-color)
+      &--txt
+        margin-left 200px
+        padding-right 15px
+        @media $xxs 
+          margin-left 0
+          margin-top 30px
+        h3  
+          text-align left
+          font-family roboto
+          font-size 24px
+          margin-bottom 16px
+          font-weight 400
+        p 
+          font-size 14px
+          color c_lightgray
+  &__info
+    &--header 
+      height 62px
+      overflow hidden
+      margin-bottom 15px
+      h4
+        font 18px roboto
+        font-weight 700
+        text-transform uppercase
+        margin-top 15px
+  a.plus
+    plus(inline-block, static, auto, #4a4a4b, '../img/bg/plus.png')
+    padding 10px 47px 10px 15px
+    text-transform uppercase
+    font-size 14px
+    line-height 22px
+    background-position 100% 50%
+    text-decoration none
+    &:after
+      margin -3px 0 0 10px 
+
+
+repare()
+  font-family robotoSl
+  font-weight 100
+
+
+
+
+
+/* ==========================================================================
+   3.1. ABOUT INFO
+   ========================================================================== */
+.about
+  background url('../img/bg/about.jpg') 50% 0 no-repeat
+  min-height 940px
+  h1
+    font-family robotoSl
+    text-transform uppercase
+    color #ffffff
+    font-weight 100
+    line-height 40px
+    text-align center
+    padding-top 40px
+    text-shadow 0 0 16px rgba(0,0,0,.8)
+    font-size 34px
+    @media $sm 
+      font-size 60px
+  &__info
+    margin-top 460px
+    min-height 380px
+    @media $xsm 
+      margin-top 400px
+    &__img 
+      float right
+      width 300px
+      @media $xsm 
+        display none
+    &__txt 
+      margin-right 300px
+      padding-right 50px
+      transition(all)
+      @media $xsm 
+        width 100%
+        padding-right 0
+      hr 
+        height 1px
+        background-color #b4b4b4
+        width 60%
+        border none
+        display block
+        margin 30px 0
+      p 
+      color  #b4b4b4
+      line-height 24px
+      font-size 16px
+      strong
+        color c_white
+      &--sm 
+        padding-top 20px
+      &--full
+        display none
+        p 
+          margin-top 15px
+    .plus
+      plus(block, relative, 45px, c_gray, '../img/bg/plus.png')
+      background-color transparent
+      color c_white
+      line-height 41px
+      cursor pointer
+      left 50%
+      margin 30px 0 0 -23px
+      &:hover 
+        background-color rgba(115,40,98,.7)
+      &.active
+        background-color rgba(115,40,98,.7)
+        &:after
+          transform rotate(-45deg)
+          transition(transform)
+
+
+
+
+/* ==========================================================================
+   3.2. TEAM
+   ========================================================================== */
+.team
+  padding-top 80px
+  &__slider
+    margin-top 40px
+    @media $lg 
+      height 583px
+    &__item
+      &__border 
+        min-height 279px
+        background-position 50% 0
+        background-repeat no-repeat
+        position relative
+        margin-bottom 35px
+        @media $lg 
+          height 583px
+        &:before
+          content ''
+          position absolute
+          right 0
+          left 0
+          margin 0 auto
+          width 252px
+          height 379px
+          background url('../img/bg/team-rhomb.png') 50% 0 no-repeat
+          @media $lg
+            content ''
+            position absolute
+            right 0
+            left 0
+            bottom 0
+            top 0
+            height 583px
+            background rgba(0, 0, 0, 0.4)
+        &:hover
+          &:before 
+            content ''
+            background-color transparent
+      &:hover
+        h3
+        p
+          color c_white
+      &__info
+        position relative
+        @media $lg 
+          position relative
+          bottom 250px
+        h3
+          color rgba(255, 255, 255, 0.25)
+          font 24px/1 robotoSl
+          margin-bottom 20px
+          &:after 
+            content ''
+            position absolute
+            height 1px
+            background-color rgba(255, 255, 255, 0.25)
+            width 150px
+            top 35px
+            left 50%
+            margin-left -75px
+        p 
+          font 12px/1 robotoSl
+          color rgba(255, 255, 255, 0.53)
+          text-align center
+        .plus
+          plus(block, static, 45px, c_gray, '../img/bg/plus.png')
+          background-color transparent
+          color c_white
+          line-height 41px
+          font-size 14px
+          margin 40px auto 0
+          text-transform uppercase
+          cursor pointer
+          &:hover 
+            background-color rgba(115,40,98,.7)
+  h2 
+    repare()
+    font-size 24px
+    margin-bottom 20px
+    @media $lg 
+      font-size 48px
+      margin-bottom 45px
+  h5 
+    repare()
+    text-transform uppercase
+    text-align center
+    font-size 14px
+    @media $sm 
+      font-size 18px
+      line-height 24px
+    @media $lg
+      margin-bottom 40px
+      padding 0 100px
+    
+.team-txt 
+  margin-top 40px
+  text-align center
+  p
+    text-align justify
+    color #b4b4b4
+    @media $xsm 
+      font-size 12px
+    @media $sm 
+      font-size 16px
+      padding 0 80px
+      
+  .plus
+    plus(inline-block, static, auto, c_gray, '../img/bg/plus.png')
+    background-color transparent
+    color c_white
+    padding 0 45px 0 20px
+    line-height 41px
+    font-size 14px
+    text-transform uppercase
+    margin 80px auto 40px
+    cursor pointer
+
+
+
+
+/* ==========================================================================
+   3.3. LICENSE
+   ========================================================================== */
+.bordered-info 
+  box-sizing border-box
+  padding 30px 0 40px
+  background-color #393c3f
+  @media $md 
+    min-height 500px
+  &--license
+    @media $sm 
+      padding-top 90px
+      background url('../img/bg/license.jpg') 50% 0 no-repeat
+    @media $lg 
+      padding-top 110px
+  &--service
+    margin-bottom 40px
+    @media $sm 
+      padding-top 110px
+      background url('../img/bg/service-guarantee.jpg') 50% 0 no-repeat
+    @media $lg 
+      padding-top 110px
+  h2
+    font-family robotoSl
+    font-size 19px
+    margin-bottom 25px
+    @media $sm 
+      font-size 24px
+    @media $lg 
+      font-size 34px
+      margin-bottom 40px
+  &__txt 
+    border 1px solid c_white
+    @media $xsm 
+      padding 15px 15px 0
+    @media $sm 
+      padding 30px 45px 0 45px
+    p
+      @media $xsm 
+        margin-bottom 15px
+      @media $sm 
+        margin-bottom 30px
+
+
+
+
+/* ==========================================================================
+   4.1. SERVICE PAGE INFO
+   ========================================================================== */
+.service-bg 
+  min-height 1380px
+  @media $xsm 
+    background #202020 url('../img/bg/service-big-767.jpg') 50% 0 no-repeat
+  @media $sm 
+    background #202020 url('../img/bg/service-big.jpg') 50% 0 no-repeat
+.repare
+  h2
+    repare()
+    font-size 36px
+    color #000
+    padding-bottom 15px
+    border-bottom 1px solid #000
+    margin-bottom 15px
+    display inline-block
+    @media $xxs 
+      font-size 25px
+  .plus
+    plus(inline-block, static, auto, c_gray, '../img/bg/plus-black.png')
+    line-height 41px
+    color c_black
+    padding 0 45px 0 20px
+    letter-spacing 2px
+    background-color transparent
+
+.repare-tel 
+  padding-top 60px
+  box-sizing border-box
+  height 430px
+  overflow hidden
+  padding-left 5%
+
+.repare-txt
+  max-height 257px
+  overflow hidden
+  margin-bottom 30px
+  p 
+    color #999
+    font-size 16px
+
+.repare-watch
+  text-align right
+  padding-top 60px
+  overflow hidden
+  height 480px
+  @media $xxs 
+    padding-top 40px
+  h2
+  p
+    color #e2e1e1
+  h2 
+    repare()
+    border-bottom 0
+    @media $xxs 
+      padding-bottom 0
+      margin-bottom 5px
+  h5 
+    position relative
+    font-size 24px
+    margin-bottom 20px
+    font-family roboto
+    font-weight 300
+    color #e2e1e1
+    @extend .square-brackets
+    span 
+      padding 0 6px 0 0
+    @media $xsm 
+      margin-bottom 10px
+      font-size 20px
+  .plus
+    plus(inline-block, static, auto, c_gray, '../img/bg/plus.png')
+    background-color transparent
+    color c_white
+
+.repare-vertu
+  padding-top 40px
+  margin-bottom 110px
+  overflow hidden
+  @media $xxs 
+    padding-top 20px
+  @media $md 
+    padding-top 20px
+  @media $lg 
+    padding-top 40px
+  h2
+  p
+    color #e2e1e1
+  h2 
+    border-bottom 0
+    padding-bottom 0
+  p 
+    font-size 14px
+  .plus
+    plus(inline-block, static, auto, c_gray, '../img/bg/plus.png')
+    background-color transparent
+    color c_white
+  ul
+    margin-top 15px
+    li 
+      list-style-type square
+      margin-left 15px
+      color #e2e1e1
+
+
+
+
+/* ==========================================================================
+   4.2. SERVICE VERTU
+   ========================================================================== */
+.service-vertu
+  padding 20px 0 50px
+
+  h2
+    @extend .header-thin
+
+.rhomb
+  // overflow hidden
+  margin 40px auto 0
+  text-align center
+  position relative
+  padding-top 30px
+  @media $sm 
+    height 1390px
+  @media $md
+    height 880px
+  @media $lg 
+    height 620px
+  &:before
+    content ''
+    height 1px
+    width 180px
+    background-color c_white
+    position absolute
+    left 50%
+    margin-left -90px
+    top 0
+  &__item
+    display inline-block
+    width 297px
+    height 320px
+    overflow hidden
+    background url('../img/bg/slider-bg.png') 50% 0 no-repeat
+    padding 70px 30px 0
+    // border 1px solid #f00
+    transition(all)
+    @media $xsm 
+      margin-bottom 20px
+    @media $sm 
+      position relative
+    &--1
+      @media $sm 
+        left 150px
+      @media $lg 
+        left -150px
+    &--2
+      @media $sm 
+        top 260px
+        left -300px
+      @media $md 
+        top 0
+        left 150px
+      @media $lg 
+        left -150px
+    &--3
+      @media $sm 
+        top -65px
+        left 300px
+      @media $md 
+        top 265px
+        left -600px
+      @media $lg 
+        top 0
+        left -150px
+    &--4
+      @media $sm 
+        top 195px
+        left -150px
+      @media $md 
+        top -60px
+        left 300px
+      @media $lg 
+        top -324px
+        left 750px
+    &--5
+      @media $sm 
+        top 130px
+        left 0
+      @media $md 
+        top -60px
+        left 300px
+      @media $lg 
+        left -300px
+    &--6
+      @media $sm 
+        top 130px
+        left 0
+      @media $md 
+        top 205px
+        left -450px
+      @media $lg 
+        top -60px
+        left -300px
+    &--7
+      @media $sm 
+        top 65px
+        left 0
+      @media $md 
+        top -119px
+        left 150px
+      @media $lg 
+        top -384px
+        left 300px
+    h5 
+      font-size 14px
+      text-transform uppercase
+      height 53px
+      overflow hidden
+      line-height 1.3
+      margin-bottom 10px
+    &__txt 
+      height 92px
+      position relative
+      overflow hidden
+      margin-bottom 15px
+      padding-top 15px
+      &:before
+        content ''
+        position absolute
+        height 1px
+        background-color c_white
+        width 100px
+        left 50%
+        margin-left -50px
+        top 0
+      p 
+        font-size 13px
+        color #bcbcbc
+    .plus
+      plus(block, relative, 41px, c_lightgray, '../img/bg/plus.png')
+      line-height 41px
+      margin 0 auto
+      cursor pointer
+      transition(background-color)
+      &:after
+        margin-left -13px
+      &:hover 
+        background-color #ff0099
+        transition(background-color)
+    &.active 
+      background url('../img/bg/service-slider-active.png') 50% 0 no-repeat
+      h5 
+        color #000
+      .rhomb__item__txt
+        p
+          color #000
+        &:before
+          background-color c_purple
+
+
+
+
+/* ==========================================================================
+   4.3. SERVICE SLIDER
+   ========================================================================== */
+.service-slider
+  // min-height 580px
+  width 100%
+  background-color c_white
+  @media $sm 
+    width 80%
+    margin 0 auto
+    border 1px solid #000
+  @media $lg
+    width 100%
+  &__item
+    &__img
+      max-width 300px
+      margin 0 auto
+      @media $md
+        float left
+        margin-right 50px
+      @media $lg 
+        float none
+        margin 0 auto
+        max-width 280px
+      img
+        margin 0 auto
+        max-width 300px
+        height auto
+    &__info
+      padding-top 30px
+      @media $xsm 
+        width 80%
+        margin 0 auto
+      @media $md 
+        margin-left 350px
+      @media $lg 
+        margin-left 0
+        width 90%
+        margin 0 auto
+      h4 
+        font-size 18px
+        text-transform uppercase
+        margin-bottom 10px
+      h6 
+        text-transform uppercase
+        font-size 14px
+        color #999
+        font-weight 400
+        margin-bottom 15px
+      .txt 
+        color #999
+        padding 15px 0
+        border-top 1px solid #999
+        border-bottom 1px solid #999
+        margin-bottom 20px
+      &__price-old
+        margin-bottom 10px
+        .price-old 
+          color c_black
+          text-decoration: line-through;
+          font-size 18px
+          font-weight 100
+          text-transform uppercase
+        .slash 
+          padding 0 5px
+          font-size 18px
+      &__price-current
+        margin-bottom 15px
+        .price-current
+          color c_purple
+          font-size 24px
+          font-weight 700
+        .slash 
+          padding 0 5px
+          font-size 24px
+          color c_purple
+  .btn 
+    btn(c_black, transparent, 1px solid #d1d1d1, 18px, 0 10px)
+    height 35px
+    line-height 35px
+    margin 0 10px 10px 0
+    &--buy
+      color c_white
+      border 1px solid c_purple
+      padding-right 50px
+      position relative
+      background-color c_purple
+      &:after
+        content ''
+        position absolute
+        top 7px
+        right 10px
+        width 25px
+        height 19px
+        background url('../img/svg/cart-white.svg') 100% 0 no-repeat
+        background-size 18px 18px
+        border-left 1px solid #fcd8ed
+
+.service-slider__item.slick-slide
+  opacity .4
+.service-slider__item.slick-current
+  opacity 1
+
+
+
+
+
+/* ==========================================================================
+   4.4. SERVICE BOTTOM
+   ========================================================================== */
+.service-bottom
+  height 458px
+  box-sizing border-box
+  margin-bottom 30px
+  display table
+  width 100%
+  .col-xs-12
+    padding 0
+  &--credit
+    background url('../img/bg/service-credit.jpg') 50% 0 no-repeat
+    text-align right
+    h2
+      text-align right
+  &--trade-in
+    background url('../img/bg/service-trade-in.jpg') 50% 0 no-repeat
+    h2 
+      text-align left
+  &__right
+    float right
+    height 458px
+  &__item
+    height 458px
+    display table-cell
+    vertical-align middle
+    width 100%
+    @media $xxs 
+      padding 0 15px
+    @media $sm 
+      padding 0 99px
+    @media $xs 
+      padding 0 50px
+    &:hover 
+      .repare-txt
+        display block
+      .plus
+        display inline-block
+    h2
+      repare()
+      font-size 48px
+      color #fff
+      margin-bottom 20px
+    h5 
+      position relative
+      font-size 24px
+      margin-bottom 20px
+      font-family roboto
+      font-weight 300
+      color #e2e1e1
+      @extend .square-brackets
+      span 
+        padding 0 6px 0 0
+    .repare-txt
+      display none
+      p
+        color #b2b2b2
+        font-size 14px
+    .plus
+      plus(none, static, auto, c_gray, '../img/bg/plus.png')
+      background-color transparent
+      color c_white
+      padding 0 45px 0 20px
+      line-height 41px
+
+
+
+
+
+/* ==========================================================================
+   5.1. SERVICE ITEM INFO
+   ========================================================================== */
+.service-item__info
+  padding-top 30px
+  padding-bottom 30px
+  @media $xsm 
+    text-align center
+  @media $md 
+    min-height 550px
+    background url('../img/bg/service-item.jpg') 50% 0 no-repeat
+  h2
+    repare()
+    position relative
+    margin-bottom 30px
+    font-size 30px
+    &:after
+      @media $md 
+        content ''
+        height 1px
+        width 300px
+        top 55px
+        left 50%
+        margin-left -150px
+        background-color c_white
+        position absolute
+    @media $md 
+      font-size 36px
+      text-align left
+      &:after 
+        @media $md 
+          left 0
+          margin-left 0
+    
+  p
+    color #c4c4c4
+    font-size 16px
+    line-height 20px
+    margin-bottom 20px
+    text-align left
+
+  .btn
+    btn(c_white, transparent, 1px solid c_white, 24px, 15px 30px)
+    cursor pointer
+    display inline-block
+    // margin 30px auto
+    @media $xsm 
+      font-size 16px
+      padding 10px 20px
+    @media $sm 
+      margin 20px auto
+
+
+
+
+/* ==========================================================================
+   5.2. SERVICE ITEM TABS
+   ========================================================================== */
+.service-item__tabs
+  background-color #333
+  @media $xsm 
+    padding 20px 0
+  @media $sm 
+    padding 30px 0
+  h4 
+    repare()
+    text-transform uppercase
+    font-size 18px
+    line-height 26px
+    text-align center
+    @media $xsm 
+      text-transform none
+      line-height 18px
+      font-size 17px
+      margin-top 10px
+    @media $md
+      padding 0 200px
+  .desktop
+    @media $xsm 
+      display none
+    @media $sm 
+      display table-cell
+      text-align center
+      font-size 11px
+      @media $md 
+        font-size 16px
+
+.service-tabs-lnk
+  margin-top 30px
+  margin-bottom 20px
+  overflow hidden
+  display table
+  width 100%
+  @media $xsm 
+    display none
+  @media $sm 
+    display table
+  &__item
+    display table-cell
+    text-align center
+    vertical-align top
+    list-style none
+    &__content
+      padding 0
+      position relative
+      text-transform uppercase
+      padding 12px 20px 10px 20px
+      border 1px solid transparent
+      @media $xmd 
+        font-size 12px
+        line-height 14px
+      @media $md 
+        font-size 17px
+        line-height 24px
+      &:hover 
+        color c_purple
+        span
+          border-bottom-color c_purple
+      span 
+        border-bottom 1px dashed c_white
+        cursor pointer
+    &.active
+      .service-tabs-lnk__item__content
+        @media $sm 
+          background-color c_purple
+          color c_white
+          border 1px solid c_white
+          position relative
+      span
+        @media $sm 
+          border-bottom-color c_purple
+          cursor default
+  &.open
+    @media $xsm 
+      position absolute
+      width 100%
+      z-index 5
+      left 0
+      background-color #333
+      box-shadow inset 0 0 3px 0 rgba(255,255,255,.8)
+      padding 15px
+      display block !important
+      margin-top 0
+      .service-tabs-lnk__item
+        display block
+  &__sm
+    @media $xsm 
+      margin 20px auto
+      display inline-block
+      cursor pointer
+      color c_purple
+    @media $sm 
+      display none
+
+.service-tabs
+  position relative
+  text-align center
+  &__item
+    position absolute
+    width 100%
+    visibility hidden
+    opacity 0
+    display table
+    &__header 
+      display table
+      width 100%
+      text-transform uppercase
+      font-size 14px
+      text-align center
+      vertical-align middle
+      position relative
+      margin-bottom 5px
+      &--1
+        background-color #766e6e
+      &--2
+        background-color #957785
+      &--3
+        background-color #956c81
+      &--4
+        background-color #955c7b
+      &--5
+        background-color #954d75
+    &__row
+      display table
+      width 100%
+      transition(background-color)
+      &:hover
+        .service-tabs__item__col
+          background-color #5d002c;
+          transition(background-color)
+          span
+            &:after
+              display block
+          span.active
+            &:after
+              background url('../img/svg/order-green.svg') 0 0 no-repeat
+    &__col
+      @media $xsm 
+        padding 10px 15px
+      @media $sm 
+        display table-cell
+        float none
+        cursor pointer
+        vertical-align middle
+        padding 10px 15px
+        border-top 1px solid rgba(255,255,255,.5)
+        border-bottom 1px solid rgba(255,255,255,.5)
+        border-right 1px dotted rgba(255,255,255,.5)
+        border-left 1px dotted rgba(255,255,255,.5)
+        &:not(:first)
+          border 1px solid #000
+        span
+          &:after
+            content ''
+            position absolute
+            width 24px
+            height 24px
+            background url('../img/svg/order-red.svg') 0 0 no-repeat
+            top 50%
+            margin-top -11px
+            display none
+            right 5px
+          &.active
+            &:after
+              display block
+              background url('../img/svg/order-green.svg') 0 0 no-repeat
+      @media $md
+        span
+          &:after
+            right 11px
+      &--1
+        background-color #5e5959
+        text-align left 
+      &--2
+        background-color #64545c
+      &--3
+        background-color #644f5a
+      &--4
+        background-color #644656
+      &--5
+        background-color #643f53
+    .active
+      background-color #392731
+  .btn
+    btn(c_white, transparent, 1px solid c_white, 24px, 15px 30px)
+    margin-top 30px
+    @media $xsm 
+      font-size 16px
+    @media $sm 
+      display inline-block
+      margin-top 40px
+
+.js-tab-item--visible 
+  visibility visible !important
+  opacity 1 !important
+
+.js-tab-item--hidden 
+  visibility hidden !important
+  opacity 0 !important
+
+/* =====================================
+ Model block
+====================================== */
+.model-wrp
+  background-image url(../img/model-bg.png)
+  background-size cover
+  background-position: center center
+  background-repeat: no-repeat
+  background-color: #ffffff
+
+.model
+  margin: 0 auto
+  width 100%
+  min-width: 320px
+  height auto
+  font-size: 0
+  position: relative
+  padding-top: 40px
+  padding-bottom: 65px
+  @media $xs
+    width: 480px
+  @media $sm
+    width: 768px
+  @media $md
+    width 960px
+  @media $lg
+    width 1110px
+
+  &__inner-wrapper
+    margin: 0 auto
+    width: 100%
+    position: relative
+    overflow: hidden
+    @media $xxs
+      padding: 0 40px
+    @media $xs
+      width: 380px
+    @media $sm
+      width 585px
+    @media $md
+      width 740px
+    @media $lg
+      width: 1040px
+
+  &__arrow
+    display inline-block
+    width: 63px
+    height: 303px
+    background-image: url(../img/model__arrow.png)
+    background-size: contain
+    position: absolute
+    top: calc(50% - 151px)
+    opacity: .8
+    &:hover
+      opacity: 1
+    @media $xsm
+      width: 30px
+      height: 142px
+
+    &--prev
+      left -(63px + 3%)
+      @media $xs
+        left: 0
+      @media $xxs
+        left: 0
+      @media $sm
+        left: -93px
+      @media $xlg
+         left: 0
+
+    &--next
+      transform rotate(180deg)
+      right -(63px + 3%)
+      @media $xlg
+        right: 0
+      @media $xs
+        right: 0
+      @media $xxs
+        right: 0
+      @media $sm
+        right: -93px
+      @media $xlg
+        right: 0
+  &__img
+    width 280px
+    height 475px
+    object-fit contain
+    display: inline-block
+    vertical-align: top
+    margin-top: 45px
+    @media $xxs
+      width: 135px
+      height: 235px
+    @media $xsm
+      width: 135px
+      height: 235px
+    @media $sm
+      width: 205px
+      height: 345px
+      margin-top: 160px
+    @media $md
+      width: 210px
+      height: 355px
+      margin-top: 160px
+    @media $lg
+      width: 275px
+      height: 475px
+      margin-top: 40px
+
+  &__tradein
+    display: none
+    width: 78px
+    height: 108px
+    object-fit contain
+    vertical-align: top
+    margin-top: 15px
+    @media $xmd
+      position: absolute
+      left: 125px
+    @media $md
+      position: absolute
+      left: 125px
+    @media $lg
+      position: static
+
+    &--isvisible
+      display: inline-block
+      @media $xsm
+        display: none
+
+  &__info
+    display: block
+    float: right
+    @media $xsm
+      width: 180px
+    @media $sm
+      width: 350px
+    @media $md
+      width: 490px
+    @media $lg
+      width: 545px
+
+  &__name
+    display: inline-block
+    color: #ffffff
+    text-transform: uppercase
+    font-weight: bold
+    font-family robotoSl
+    font-size: 48px
+    text-align: left
+    @media $md
+      font-family:robotoTh
+      font-weight: lighter
+    @media $sm
+      font-family:robotoTh
+      font-weight: lighter
+      font-size: 34px
+    @media $xsm
+      display: none
+
+  &__name-xs
+    display: none
+    color: #ffffff
+    text-transform: uppercase
+    font-family:robotoTh
+    font-weight: lighter
+    font-size: 30px
+    text-align: left
+    @media $xsm
+      display: inline-block
+    &:after
+      content ''
+      display: inline-block
+      background-image: url(../img/icon-trade-in--mini.png)
+      width: 40px
+      height: 40px
+      background-size contain
+      background-repeat: no-repeat
+      margin-left: 10px
+      vertical-align: middle
+
+  &__icons
+    display: inline-block
+    width: 100%
+    font-size: 0
+    margin-top: 35px
+
+  &__icon
+    display: inline-block
+    font-family roboto
+    font-size: 12px
+    color: #ffffff
+    width: 140px
+    vertical-align: top
+    margin-bottom: 17px
+    @media $xsm
+      width: 40px
+      height: 40px
+      margin-left: 10px
+      margin-bottom: 5px
+
+    span
+      display: inline-block
+      vertical-align: middle
+      width: 90px
+      margin-left: 10px
+      @media $xsm
+        display: none
+
+    i
+      display: inline-block
+      min-height: 37px
+      width: 37px
+      height: 37px
+      vertical-align: middle
+      background-size: 37px 37px
+      background-position left center
+      background-repeat: no-repeat
+    .stock
+      background-image: url(../img/svg/Actions-01.svg)
+    .new
+      background-image: url(../img/svg/New-01.svg)
+    .hit
+      background-image: url(../img/svg/Hit-01.svg)
+    .minprice
+      background-image: url(../img/svg/MinPrice-01.svg)
+    .sale
+      background-image: url(../img/svg/Sale-01.svg)
+    .exsclusive
+      background-image: url(../img/svg/Exclusieve-01.svg)
+
+  &__description-title
+    display: inline-block
+    font-size: 16px
+    color: #ffffff
+    font-family:roboto
+    width: 510px
+    text-align: left
+    margin-bottom: 10px
+    @media $sm
+      font-size: 14px
+    @media $md
+      font-size: 16px
+    @media $xsm
+      display: none
+
+
+  &__description
+    display: inline-block
+    font-family:roboto
+    font-size: 14px
+    color: #ffffff
+    @media $sm
+      font-size: 12px
+    @media $md
+      font-size: 14px
+    @media $xsm
+      display: none
+
+  &__oldprice
+    display: block
+    font-family:robotoSl
+    font-weight: lighter
+    color: #848687
+    font-size: 24px
+    margin-top: 25px
+    @media $xsm
+      font-size: 20px
+
+  &__newprice
+    display: block
+    font-family:robotoSl
+    font-weight: bold
+    font-size: 30px
+    color: #ffffff
+    margin-top: 10px
+    margin-bottom: 20px
+    @media $xsm
+      font-size: 20px
+
+  &__btn
+    display: inline-block
+    font-family: robotoSl
+    font-weight: lighter
+    font-size: 20px
+    text-transform: uppercase
+    color: #ffffff
+    text-align: center
+    height: 55px
+    line-height: 55px
+    padding: 0 15px
+    border 1px solid #ffffff
+    margin-left: 5px
+    background-color: #373533
+    margin-top: 5px
+    &:first-child
+      margin-left: 0
+    &:hover
+      text-decoration: none
+    @media $xsm
+      display: none
+
+    &--buy
+      background-color: #b33684
+      background-image: url(../img/svg/icon-buy-01.svg)
+      background-repeat: no-repeat
+      background-size: 28px 30px
+      background-position: 95% center
+      padding-right: 50px
+
+  &__btn-list
+    @media $sm
+      display: none
+    padding: 0
+  &__btn-list-item
+    display: inline-block
+  &__btn-list-link
+    display: inline-block
+    text-decoration: none
+    font-family: robotoSl
+    font-weight: lighter
+    font-size: 20px
+    text-transform: uppercase
+    color: #ffffff
+    text-align: center
+    height: 55px
+    line-height: 55px
+    border 1px solid #ffffff
+    margin-left: 5px
+    background-color: #373533
+    margin-top: 5px
+    width: 130px
+    &:hover
+     text-decoration: none
+    &--buy
+      background-color: #b33684
+      background-image: url(../img/svg/arrow-dropdown.svg)
+      background-repeat: no-repeat
+      background-size: 34px 36px
+      background-position: 95% center
+      padding-right: 50px
+      width: 175px
+
+  &__subbtn-list
+    display: none
+    &.isvisible
+      display: block
+
+.model-catalog
+  background-color: #ffffff
+  overflow: hidden
+
+
+
+/* ====================
+  Phones
+======================= */
+
+.phones-wrp
+  background-color: #f2f2f2
+  padding-top: 55px
+
+  & .phones-inner-wrp
+    text-align: center
+    margin-left: -100px
+    padding-bottom: 50px
+    @media $xmd
+      padding-left: 20px
+
+  & .wrapper
+    @media $extlg
+      width: 1515px
+
+  & h2
+    color: #000000
+    font-size: 36px
+    position: relative
+  & p
+    color: #999999
+    text-align: center
+    line-height: 24px
+    text-transform: uppercase
+    font-size: 18px
+  & .new-catalog__slider__item.model-line-items
+    position: relative
+    margin-left: 100px
+
+    & .new-catalog__slider__item__content--txt
+      width: 100px
+    & .new-catalog__slider__item__content img
+        margin: 0 0 0 -115px
+        max-height 200px
+        max-width 185px
+    & .new-catalog__slider__item__content
+      left: 0
+      margin-left: 0
+    & .new-catalog__slider__item__content--txt a
+      text-align: left
+    & .price-current
+      color: #000000
+      transition color 0.5s linear
+    & .new-catalog__slider__item__content:hover
+      .price-current
+        color: #ec008c
+  & .phones-btn
+    display: block
+    text-transform: uppercase
+    color: #000000
+    line-height: 40px
+    width: 195px
+    text-align: center
+    height: 40px
+    border 1px solid #cccccc
+    font-size: 14px
+    margin: 0 auto
+    text-decoration: none
+
+
+/*===========================
+accessories
+=============================*/
+
+.accessories
+  height: 710px
+  background-color: #333333
+  position: relative
+  &:before
+    content ''
+    display: block
+    width: 100%
+    height: 68px
+    background-repeat: no-repeat
+    background-image: url(../img/bg/bg-triangle.png)
+    background-size: contain
+    position: absolute
+    top: 0
+    left: 0
+  &:after
+    content ''
+    display: block
+    width: 100%
+    height: 68px
+    background-repeat: no-repeat
+    background-image: url(../img/bg/bg-triangle-black.png)
+    background-size: contain
+    position: absolute
+    bottom: -68px
+    left: 0
+
+/* ==========================
+Product info
+=============================*/
+
+.product-info
+  background-color: #ffffff
+  padding-top: 50px
+  padding-bottom: 20px
+  text-align: center
+  border-bottom 25px solid #333333
+  &__title
+    font-family: robotoSl
+    font-weight: lighter
+    font-size: 30px
+    color: #333333
+    text-align: center
+    margin-bottom: 40px
+    margin-top: 50px
+  &__img
+    width: 60%
+    height: auto
+    display: block
+    margin: auto
+    object-fit contain
+  &__text
+    font-size: 16px
+    color: #000000
+    line-height: 26px
+    text-align: left
+    columns 2
+    -moz-columns 2
+    -webkit-columns 2
+    @media $xxs
+      columns 1
+      -moz-columns 1
+      -webkit-columns 1
+    &.first
+      margin-top: 50px
+    &.second
+      margin-top: 35px
+  &__plus
+    display: inline-block
+    width: 45px
+    height: 45px
+    background-color: #ababab
+    position: relative
+    margin-top: 35px
+    margin-bottom: 35px
+    &.open:before
+      transform rotate(45deg)
+    &:hover
+      background-color: rgba(115,40,98,0.7);
+    &:before
+      content ''
+      display: inline-block
+      position: absolute
+      top: 0
+      right: 0
+      left: 0
+      bottom: 0
+      margin: 0 auto
+      background-image: url(../img/bg/plus.png)
+      background-repeat: no-repeat
+      background-position: center

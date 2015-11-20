@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="24px" height="24px" viewBox="0 0 24 24">
+<filter filterUnits="objectBoundingBox" x="-4.55" y="-4.55" width="109.09" height="113.64" id="filter0">
+<feGaussianBlur in="SourceAlpha" stdDeviation="0.50" result="dsBlurOut1"/>
+<feFlood flood-color="rgb(1,0,0)" flood-opacity="0.68" result="dsFloodOut1"/>
+<feComposite in="dsFloodOut1" in2="dsBlurOut1" operator="in" result="dsShadow1"/>
+<feOffset in="dsShadow1" dx="-0.00" dy="1.00" result="dsOffset1"/>
+<feComposite in="dsOffset1" in2="SourceAlpha" operator="out" result="dropShadow1"/>
+<feBlend in="dropShadow1" in2="SourceGraphic" mode="normal" result="sourceGraphic"/>
+<feImage x="1" y="0" width="22" height="22" preserveApectRatio="none" xlink:href="#symbol0"/>
+<feComposite in="grImage1" in2="SourceAlpha" operator="in" result="grOverlay1"/>
+<feComponentTransfer in="grOverlay1" result="grOpacity1">
+    <feFuncA type="linear" slope="0.10"/>
+</feComponentTransfer>
+<feBlend in="grOpacity1" in2="sourceGraphic" mode="normal" result="gradientOverlay1"/>
+<feFlood flood-color="rgb(255,255,255)" result="isFloodOut1"/>
+<feOffset in="SourceAlpha" dx="-0.00" dy="1.00" result="isOffset1"/>
+<feGaussianBlur in="isOffset1" stdDeviation="0.00" result="isBlurOut1"/>
+<feComposite in="isFloodOut1" in2="isBlurOut1" operator="out" result="isShadow1"/>
+<feComponentTransfer in="isShadow1" result="isShadowOpacity1">
+    <feFuncA type="linear" slope="0.79"/>
+</feComponentTransfer>
+<feComposite in="isShadowOpacity1" in2="SourceAlpha" operator="in" result="isInnerShadow1"/>
+<feBlend in="isInnerShadow1" in2="gradientOverlay1" mode="screen" result="innerShadow1"/>
+</filter>
+<linearGradient id="linear_PSgrad_0" x1="50%" y1="100%" x2="50%" y2="0%">
+    <stop offset="0%" stop-color="rgb(1,0,0)" stop-opacity="1" />
+    <stop offset="100%" stop-color="rgb(255,255,255)" stop-opacity="1" />
+</linearGradient>
+
+<defs>
+<rect x="0" y="0" width="22" height="22" id="symbol0" fill="url(#linear_PSgrad_0)"/></defs>
+<path fillRule="evenodd" d="M 12 21.99C 5.93 21.99 1.01 17.07 1.01 11 1.01 4.93 5.93 0.01 12 0.01 18.07 0.01 22.99 4.93 22.99 11 22.99 17.07 18.07 21.99 12 21.99ZM 16.74 4.84C 16.74 4.84 10.26 11.31 10.26 11.31 10.26 11.31 7.67 8.72 7.67 8.72 7.67 8.72 5.08 11.31 5.08 11.31 5.08 11.31 10.26 16.5 10.26 16.5 10.26 16.5 12.85 13.91 12.85 13.91 12.85 13.91 12.85 13.91 12.85 13.91 12.85 13.91 19.33 7.43 19.33 7.43 19.33 7.43 16.74 4.84 16.74 4.84Z" fill="rgb(255,255,255)" opacity="0.27" filter="url(#filter0)"/></svg>

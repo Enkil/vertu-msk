@@ -1,0 +1,30 @@
+.new-catalog__slider.js-slick
+  mixin newCatalogSlider(icon1, icon2, lnk, euroOld, euro, rubOld, rub, img)
+    .new-catalog__slider__item
+      .new-catalog__slider__item__content
+        .new-catalog__slider__item__content--txt
+          .icons
+            if icon1 !== '' 
+              div(class=icon1)
+            if icon2 !== '' 
+              div(class=icon2)
+          a(href="")=lnk 
+        .new-catalog__slider__item__content--price
+          .new-catalog__slider__item__content--price--bd
+            if euroOld !== ''
+              span.price-old=euroOld
+            span.price-current=euro
+            if rubOld !== ''
+              span.price-old=rubOld
+            span.price-current=rub
+          a(href="", class="new-catalog__slider__item__content--cart")
+        img(src=img, alt="")
+  +newCatalogSlider('icons__item icons__item--new', '', 'Ulysse Nardin Dual Time Lady', '5 550 €', '5 400 €', '398 000 р.', '382 000 Р', 'img/slider-1.png')
+  +newCatalogSlider('', 'icons__item icons__item--sale', 'Ulysse Nardin El Toro', '', '35 000 €', '', '717 400 Р', 'img/slider-2.png')
+  +newCatalogSlider('icons__item icons__item--hit', 'icons__item icons__item--min', 'Ulysse Nardin Dual Time 42 мм', '', '731 €', '', '55 000 Р', 'img/slider-3.png')
+  +newCatalogSlider('icons__item icons__item--min', 'icons__item icons__item--hit', 'PATEK PHILIPPE ANNUAL CALENDAR', '', '4 817 €', '', '362 600 Р', 'img/slider-4.png')
+  +newCatalogSlider('icons__item icons__item--exclusive', 'icons__item icons__item--discount', 'Кольцо из белого золота 750 пробы с бриллиантами', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/slider-5.png')
+  +newCatalogSlider('icons__item icons__item--discount', '', 'Vertu Aster Blue Stingray Flap Case', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/slider-6.png')
+  +newCatalogSlider('icons__item icons__item--exclusive', 'icons__item icons__item--discount', 'Колье из желтого золота со вставками из черного оникса и перламу', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/slider-7.png')
+  +newCatalogSlider('icons__item icons__item--discount', 'icons__item icons__item--exclusive', 'Ulysse Nardin El Toro', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/slider-8.png')
+  +newCatalogSlider('icons__item icons__item--exclusive', 'icons__item icons__item--discount', 'Ulysse Nardin Dual Time Lady', '55 550 €', '55 400 €', '3 982 000 р.', '3 182 000 Р', 'img/slider-9.png')
