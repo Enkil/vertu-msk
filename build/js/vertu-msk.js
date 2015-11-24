@@ -296,7 +296,8 @@
       // показываем текст по клику на кнопку "подробнее", странциа model-line
       $('.js-btn-more').on('click', function () {
           $('.model__description').slideToggle(500);
-      })
+      });
+
   });
     
 
