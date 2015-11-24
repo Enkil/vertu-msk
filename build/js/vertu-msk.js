@@ -279,10 +279,12 @@
         $('.product-info__text.second').slideToggle(500);
     });
 
-      //$('.js-product-btn').on('click', function () {
-      //    $('.product-info__text.second').slideToggle(500);
-      //});
+      // показываем текст по клику на кнопку "подробнее", странциа model-line
+      $('.js-btn-more').on('click', function () {
+          $('.model__description').slideToggle(500);
+      })
   });
+    
 
 
 })(jQuery);

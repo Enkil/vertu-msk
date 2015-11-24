@@ -2259,6 +2259,7 @@ repare()
     overflow: hidden
     @media $xxs
       padding: 0 40px
+      width: 400px
     @media $xs
       width: 380px
     @media $sm
@@ -2307,6 +2308,40 @@ repare()
         right: -93px
       @media $xlg
         right: 0
+
+
+  &__more-btn
+    display: inline-block
+    font-family: robotoCd
+    font-size: 14px
+    width: 175px
+    text-transform: uppercase
+    color: #ffffff
+    height: 55px
+    line-height: 55px
+    padding: 0 15px
+    padding-left: 40px
+    border 1px solid #ffffff
+    margin-left: 5px
+    background-color: transparent
+    margin-top: 5px
+    position: absolute
+    left: 0
+    bottom: 0
+    background-image: url(../img/bg/plus.png)
+    background-position: 135px center
+    background-repeat: no-repeat
+    &:hover
+      text-decoration: none
+    @media $sm
+      display: none
+
+  &__description-by-more
+    display: inline-block
+    font-family:roboto
+    font-size: 12px
+    color: #ffffff
+
   &__img
     width 280px
     height 475px
@@ -2320,6 +2355,7 @@ repare()
     @media $xsm
       width: 135px
       height: 235px
+      margin-top: 0
     @media $sm
       width: 205px
       height: 345px
@@ -2357,6 +2393,10 @@ repare()
   &__info
     display: block
     float: right
+    position: relative
+    @media $xsm
+      margin-bottom: 50px
+      //padding-bottom: 50px
     @media $xsm
       width: 180px
     @media $sm
@@ -2410,6 +2450,8 @@ repare()
     width: 100%
     font-size: 0
     margin-top: 35px
+    @media $xsm
+      margin-top: 5px
 
   &__icon
     display: inline-block
@@ -2538,6 +2580,8 @@ repare()
     @media $sm
       display: none
     padding: 0
+    position: relative
+    bottom: -50px
   &__btn-list-item
     display: inline-block
   &__btn-list-link
@@ -2590,7 +2634,7 @@ repare()
     text-align: center
     margin-left: -100px
     padding-bottom: 50px
-    @media $xmd
+    @media $xlg
       padding-left: 20px
 
   & .wrapper
