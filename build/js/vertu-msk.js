@@ -266,8 +266,22 @@
     });
 
     // выпадающие кнопки в карточке товара model-line на 480px
+      var flag=0;
     $('.js--subbtn-dropdown').on('click', function () {
-        $('.model__subbtn-list').slideToggle(500);
+
+            if (flag==0){
+                $('.model__subbtn-list').slideToggle(500);
+                $('.js-btn-more').css('bottom', '120px');
+                flag=1;
+            }
+            else {
+                $('.model__subbtn-list').slideToggle(500);
+                $('.js-btn-more').css('bottom', '0px');
+                flag=0;
+            }
+
+        //$('.model__subbtn-list').slideToggle(500);
+        //$('.js-btn-more').css('bottom', '120px');
     });
 
     // раскрытие текста на странице model-line

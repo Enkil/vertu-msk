@@ -1,0 +1,32 @@
+extends template.jade
+
+block content
+
+
+
+
+    .service-info
+        .wrapper.clearfix
+            .col-md-6.service-info__service
+                h2 УСЛУГИ
+                mixin serviceMain(img, h3, txt)
+                    .service-info__service__item
+                        a(href="", class="service-info__service__item--img")
+                            span.plus
+                            img(src=img, alt="")
+                        .service-info__service__item--txt
+                            a(href="")
+                                h3=h3
+                            p=txt
+                +serviceMain('img/serv-1.jpg', 'СЕРВИСЫ VERTU', 'Телефоны Верту создаются для самых взыскательных клиентов. Мир владельцев Верту – это услуги, вещи, отдых и развлечения преимиум-класса. Следуя пожеланиям своих клиентов, компания Vertu разработала набор персональных услуг, цель которых – обеспечить высочайший уровень сервиса.')
+                +serviceMain('img/serv-2.jpg', 'ВИДЫ Ремонта', 'Все сотовые телефоны проекта vertu.msk.ru продаются с гарантийным талоном производителя. Это гарантирует Вам качественное обслуживание приобретенного оборудования в случае его неисправности.')
+                .ta-c
+                    a(href="", class="plus") все услуги
+            .col-md-6.service-info__info
+                a(href="", class="youtube")
+                h2 ИНФОРМАЦИЯ
+                iframe(src="http://www.youtube.com/embed/fH9ntPr1RTw?wmode=opaque", width="100%", height="315", frameborder="0")
+                .service-info__info--header
+                    h4 Vertu Constellation V. Робот и крокодил.
+                .ta-c
+                    a(href="", class="plus") больше информации
